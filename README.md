@@ -1,2 +1,2 @@
 # DevNet
-DenNet directory
+DevNet directory
