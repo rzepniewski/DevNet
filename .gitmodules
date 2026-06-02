@@ -1,0 +1,6 @@
+[submodule "car-dashboard"]
+	path = car-dashboard
+	url = https://github.com/rzepniewski/car-dashboard.git
+[submodule "Ubuntu-SSHServer-2"]
+	path = Ubuntu-SSHServer/docker/Ubuntu-SSHServer-2
+	url = https://github.com/rzepniewski/Ubuntu-SSHServer.git
