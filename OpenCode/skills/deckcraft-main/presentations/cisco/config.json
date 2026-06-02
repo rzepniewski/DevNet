@@ -1,0 +1,7 @@
+{
+  "title": "Cisco Theme Showcase",
+  "defaultTheme": "cisco",
+  "defaultProfile": "corporate",
+  "sections": ["cover", "content", "data", "visuals", "closing"],
+  "output": { "dir": "output" }
+}

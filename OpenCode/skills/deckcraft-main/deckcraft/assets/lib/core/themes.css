@@ -1,0 +1,40 @@
+/* ============================================
+   THEME BACKGROUNDS
+   Apply via body class: <body class="theme-mesh">
+   ============================================ */
+.theme-mesh .slide {
+    background:
+        radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.5) 0%, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.4) 0%, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.4) 0%, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(234, 88, 12, 0.4) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+}
+
+.theme-purple .slide {
+    background: linear-gradient(135deg, #1a0533 0%, #2d1b4e 25%, #4c1d95 50%, #6d28d9 75%, #7c3aed 100%);
+}
+
+.theme-cyan .slide {
+    background: linear-gradient(135deg, #042f2e 0%, #064e4a 25%, #0d7377 50%, #0891b2 75%, #06b6d4 100%);
+}
+
+.theme-emerald .slide {
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 25%, #047857 50%, #059669 75%, #10b981 100%);
+}
+
+.theme-orange .slide {
+    background: linear-gradient(135deg, #2a1a05 0%, #431407 25%, #7c2d12 50%, #c2410c 75%, #ea580c 100%);
+}
+
+.theme-rose .slide {
+    background: linear-gradient(135deg, #2a0a18 0%, #4c0519 25%, #881337 50%, #be123c 75%, #e11d48 100%);
+}
+
+.theme-blue .slide {
+    background: linear-gradient(135deg, #0c1929 0%, #0f2847 25%, #1e3a5f 50%, #1d4ed8 75%, #3b82f6 100%);
+}
+
+.theme-dark .slide {
+    background: linear-gradient(135deg, #0a0a0a 0%, #171717 25%, #262626 50%, #2d2d2d 75%, #3f3f3f 100%);
+}

@@ -1,0 +1,203 @@
+/**
+ * DeckCraft - Academic Style Profile
+ * Minimal, content-focused aesthetic optimized for readability
+ * Apply with: <body class="theme-{color} profile-academic">
+ *
+ * Design Philosophy:
+ * - Scholarly and professional appearance
+ * - Maximum readability with generous typography
+ * - Distraction-free: no decorative effects
+ * - Print-friendly with clear visual hierarchy
+ * - Content takes center stage
+ */
+
+.profile-academic {
+  /* ============================================
+   * TYPOGRAPHY - Readable and Scholarly
+   * ============================================ */
+
+  /* Font families - classic, readable choices */
+  --font-heading: 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Charter', 'Georgia', 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+
+  /* Font sizes - larger for readability */
+  --font-size-h1: 4rem;
+  --font-size-h2: 2.8rem;
+  --font-size-h3: 1.6rem;
+  --font-size-h4: 1.25rem;
+  --font-size-body: 1.4rem;
+  --font-size-small: 1.1rem;
+  --font-size-xs: 0.9rem;
+
+  /* Font weights - understated, not heavy */
+  --font-weight-h1: 700;
+  --font-weight-heading: 600;
+  --font-weight-h4: 600;
+  --font-weight-body: 400;
+
+  /* Line height - comfortable reading */
+  --line-height-body: 1.8;
+  --line-height-heading: 1.2;
+
+  /* Letter spacing - natural, not tight */
+  --letter-spacing-heading: 0;
+  --letter-spacing-uppercase: 0.08em;
+
+  /* ============================================
+   * SPACING - Maximize Content Area
+   * ============================================ */
+
+  /* Slide padding - reduced for more content space */
+  --slide-padding: 40px 60px;
+  --slide-padding-md: 32px 40px;
+  --slide-padding-sm: 24px;
+
+  /* Content width - generous for readability */
+  --content-max-width: 1200px;
+
+  /* Internal spacing */
+  --card-padding: 1.5rem;
+  --section-gap: 1.75rem;
+  --element-margin: 1.25rem;
+
+  /* ============================================
+   * BORDERS - Minimal and Clean
+   * ============================================ */
+
+  --border-radius-xs: 2px;
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 4px;
+  --border-radius-xl: 4px;
+  --border-radius-full: 4px;
+
+  /* ============================================
+   * EFFECTS - None (Distraction-Free)
+   * ============================================ */
+
+  /* No blur effects */
+  --backdrop-blur: 0px;
+  --backdrop-blur-sm: 0px;
+
+  /* No shadows */
+  --shadow-card: none;
+  --shadow-text: none;
+  --shadow-text-lg: none;
+  --shadow-glow: none;
+
+  /* Simple, instant transitions */
+  --transition-default: all 0.15s ease;
+  --transition-fast: all 0.1s ease;
+  --transition-slide: all 0.3s ease;
+
+  /* ============================================
+   * COMPONENT ADJUSTMENTS
+   * ============================================ */
+
+  --card-min-width: 280px;
+  --flow-box-min-width: 160px;
+  --nav-button-size: 40px;
+}
+
+/* ============================================
+ * ACADEMIC-SPECIFIC COMPONENT OVERRIDES
+ * Using existing CSS variables from presentation.css
+ * ============================================ */
+
+/* Cards - solid backgrounds, subtle borders */
+.profile-academic .card {
+  background: var(--white-10);
+  border: 1px solid var(--white-20);
+  box-shadow: none;
+}
+
+.profile-academic .card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--white-40);
+}
+
+/* Code blocks - clean, no transparency */
+.profile-academic pre,
+.profile-academic code {
+  background: var(--black-30);
+  border: 1px solid var(--white-20);
+}
+
+/* Tables - simple borders, no effects */
+.profile-academic table {
+  background: transparent;
+  border: 1px solid var(--white-20);
+  backdrop-filter: none;
+}
+
+.profile-academic th,
+.profile-academic td {
+  border: 1px solid var(--white-20);
+}
+
+/* Navigation - minimal styling */
+.profile-academic .slide-nav {
+  background: var(--white-10);
+  backdrop-filter: none;
+  border: 1px solid var(--white-20);
+}
+
+/* Highlight boxes - simple borders */
+.profile-academic .highlight-box {
+  background: var(--white-10);
+  border-left: 3px solid var(--white);
+  border-radius: 0;
+}
+
+/* Tags - understated */
+.profile-academic .tag {
+  background: var(--black-30);
+  border: 1px solid var(--white-20);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+/* Flow diagrams - clean boxes */
+.profile-academic .flow-box {
+  background: var(--white-10);
+  border: 1px solid var(--white-20);
+  backdrop-filter: none;
+}
+
+/* Panels - no transparency */
+.profile-academic .panel {
+  background: var(--white-10);
+  backdrop-filter: none;
+  border: 1px solid var(--white-20);
+}
+
+/* ============================================
+ * PRINT STYLES
+ * ============================================ */
+
+@media print {
+  .profile-academic {
+    --font-size-body: 12pt;
+    --font-size-h1: 24pt;
+    --font-size-h2: 18pt;
+    --font-size-h3: 14pt;
+    --line-height-body: 1.5;
+    --slide-padding: 0.5in;
+  }
+
+  .profile-academic .card,
+  .profile-academic .highlight-box,
+  .profile-academic .flow-box,
+  .profile-academic table {
+    break-inside: avoid;
+    border: 1px solid #333;
+  }
+
+  .profile-academic .slide-nav,
+  .profile-academic .nav-buttons {
+    display: none !important;
+  }
+}

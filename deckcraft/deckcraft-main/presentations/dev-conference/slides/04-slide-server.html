@@ -1,0 +1,27 @@
+<div class="slide" data-section="code" data-order="4">
+    <div class="slide-content">
+        <span class="tag">Server Side</span>
+        <h2>WebSocket Server</h2>
+        <p>A minimal Node.js WebSocket server with broadcast capability</p>
+
+        <div class="code-block" style="margin-top: 2rem;">
+<code class="language-javascript">const WebSocket = require('ws');
+const wss = new WebSocket.Server({ port: 8080 });
+
+wss.on('connection', (ws) => {
+    console.log('Client connected');
+
+    ws.on('message', (data) => {
+        // Broadcast to all clients
+        wss.clients.forEach((client) => {
+            if (client.readyState === WebSocket.OPEN) {
+                client.send(data.toString());
+            }
+        });
+    });
+
+    ws.on('close', () => console.log('Client disconnected'));
+});</code>
+        </div>
+    </div>
+</div>

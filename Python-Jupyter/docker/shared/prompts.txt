@@ -1,0 +1,74 @@
+https://www.codeconvert.ai/python-code-generator
+
+https://zzzcode.ai/python/code-generator
+
+
+Write the code to generate IPv6 addresses using the pattern: 3000:0:B:C::, where B is from 2 to 197 with step 1, where C is from 1 to 40 with step 1. Save the results in csv file with the header column SET1
+in the same file create the second column SET2, with the pattern 3000:0:B+1:C::
+in the same file create the third column SET3, with the pattern 3000:0:B+2:C::
+
+
+Write the python code to get data from the csv file which includes the time data in each line. The column has the header: "Convergency time". In each line there can be more than one value of time, separated by ",". Each single value is in format: h:m:s, where letters means: h - how many hours, m - how many minutes and s - how many seconds. For each line calculate the average value and add the result as additional column.
+
+import pandas as pd
+
+# Load the CSV file
+df = pd.read_csv('data2.csv')
+
+# Function to calculate average time
+def average_time(time_str):
+    times = time_str.split(',')
+    total_seconds = sum(int(h) * 3600 + int(m) * 60 + int(s) for h, m, s in (t.split(':') for t in times))
+    average_seconds = total_seconds // len(times)
+    hours, remainder = divmod(average_seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    return f"{hours}:{minutes}:{seconds}"
+
+# Calculate average time for each row
+df['Average Convergency Time'] = df['Convergency time'].apply(average_time)
+
+# Save the updated DataFrame to a new CSV file
+df.to_csv('updated_data2.csv', index=False)
+
+
+In csv file i have time data in two columns. I need to calculate what is a difference in percent between the data in the same raw. The time format is: h:m:s, where letters means: h - how many hours, m - how many minutes and s - how many seconds. Create python script to compare data and save output in the file adding additional column with results.
+
+import pandas as pd
+
+# Load the CSV file
+df = pd.read_csv('input.csv')
+
+# Function to calculate percentage difference
+def percent_difference(row):
+    time1 = pd.to_timedelta(row['Time1'])
+    time2 = pd.to_timedelta(row['Time2'])
+    if time1 == 0:
+        return None
+    return ((time2 - time1) / time1) * 100
+
+# Apply the function to each row
+df['Percent Difference'] = df.apply(percent_difference, axis=1)
+
+# Save the output to a new CSV file
+df.to_csv('output.csv', index=False)
+
+import pandas as pd
+
+def calculate_time_difference_percent(file_path, output_file):
+    df = pd.read_csv(file_path)
+    
+    def time_to_seconds(time_str):
+        h, m, s = map(int, time_str.split(':'))
+        return h * 3600 + m * 60 + s
+
+    df['Time1_seconds'] = df['Time1'].apply(time_to_seconds)
+    df['Time2_seconds'] = df['Time2'].apply(time_to_seconds)
+    
+    df['Difference_percent'] = ((df['Time2_seconds'] - df['Time1_seconds']) / df['Time1_seconds']) * 100
+    
+    df.to_csv(output_file, index=False)
+
+# Example usage
+calculate_time_difference_percent('input.csv', 'output.csv')
+
+Write the python code to compare time data in csv file. In csv file there are time data in two columns called Time1 and Time2. I need to calculate what is a difference in percent between the data in the same raw. The time format is: h:m:s, where letters means: h - how many hours, m - how many minutes and s - how many seconds. Save output in the file adding additional column with results.

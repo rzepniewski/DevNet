@@ -1,0 +1,39 @@
+#
+# docker build . -t <name>
+
+FROM ubuntu:latest
+
+# Run a system update
+# Install python3 and pip3
+RUN apt-get update && apt-get install -y \
+	python3 \
+	python3-pip
+
+# Install jupyter
+RUN pip3 install jupyter
+# Install Numpy
+RUN pip3 install numpy
+# Install Pandas
+RUN pip3 install pandas
+# Install Statsmodel
+RUN pip3 install statsmodel
+# Install Matplotlib
+RUN pip3 install matplotlib
+# Install Ploty
+RUN pip3 install plot
+# Install Seaborn
+RUN pip3 install seaborn
+# Install Sklearn
+RUN pip3 install sklearn
+# Install Tensorflow
+RUN pip3 install tensorflow
+
+# Create a new system user
+RUN user add -ms /bin/bash jupyter
+# Change to this new user
+USER jupyter
+# Set the container working directory to the new user home folder
+WORKDIR /home/jupyter
+
+# Start the Jupyter notebook
+ENTRYPOINT ["jupyter", "notebook", "--ip=*"]

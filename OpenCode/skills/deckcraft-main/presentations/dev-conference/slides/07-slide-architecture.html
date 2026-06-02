@@ -1,0 +1,46 @@
+<div class="slide" data-section="architecture" data-order="7">
+    <div class="slide-content">
+        <span class="tag">System Design</span>
+        <h2>Production Architecture</h2>
+        <p>Scaling WebSockets beyond a single server instance</p>
+
+        <div class="diagram" style="margin-top: 2rem;">
+            <div class="flow-diagram">
+                <div class="flow-box">
+                    <h4>Client</h4>
+                    <p>Browser / App</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-box highlight">
+                    <h4>WS Server</h4>
+                    <p>Node.js</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-box">
+                    <h4>Redis PubSub</h4>
+                    <p>Message Broker</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-box">
+                    <h4>Database</h4>
+                    <p>PostgreSQL</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards-grid" style="margin-top: 2rem;">
+            <div class="card fragment fade-up">
+                <h4>Horizontal Scaling</h4>
+                <p>Redis PubSub syncs messages across multiple WS server instances behind a load balancer</p>
+            </div>
+            <div class="card fragment fade-up">
+                <h4>Sticky Sessions</h4>
+                <p>WebSocket connections are stateful -- use IP hash or cookie-based routing at the LB layer</p>
+            </div>
+            <div class="card fragment fade-up">
+                <h4>Persistence</h4>
+                <p>Store messages in PostgreSQL for history, replay, and offline client catch-up</p>
+            </div>
+        </div>
+    </div>
+</div>

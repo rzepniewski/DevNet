@@ -1,0 +1,3 @@
+# Example project requirements
+# Add your dependencies below, one per line. For example:
+requests==2.31.0

@@ -1,0 +1,279 @@
+/* ============================================
+   TITLE SLIDE
+   Use: <div class="slide title-slide">
+   ============================================ */
+.title-slide {
+    text-align: center;
+}
+
+.title-slide h1 {
+    font-size: var(--font-size-h1);
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-h1);
+    color: var(--white);
+    margin-bottom: var(--element-margin);
+    line-height: var(--line-height-heading);
+    text-shadow: var(--shadow-text-lg);
+    letter-spacing: var(--letter-spacing-heading);
+}
+
+.title-slide .subtitle {
+    font-size: var(--font-size-h3);
+    color: var(--white-80);
+    font-weight: var(--font-weight-body);
+    margin-bottom: 3rem;
+}
+
+.title-slide .meta {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ============================================
+   META ITEMS
+   Use: <div class="meta-item"><svg>...</svg><span>Text</span></div>
+   ============================================ */
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white-60);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.meta-item svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--white-80);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h2 {
+    font-size: var(--font-size-h2);
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
+    margin-bottom: var(--section-gap);
+    color: var(--white);
+    text-shadow: var(--shadow-text);
+    letter-spacing: var(--letter-spacing-heading);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--element-margin);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-h4);
+    color: var(--white);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================
+   TITLE STYLE OPTIONS
+   Apply to h2: <h2 class="title-xl">Large Title</h2>
+
+   Available styles:
+   - .title-xl         : Extra large (4.5rem)
+   - .title-gradient   : Gradient text effect
+   - .title-glow       : Glowing text effect
+   - .title-underline  : Animated underline accent
+   - .title-badge      : Title with badge/tag prefix
+   ============================================ */
+
+/* Extra Large Title */
+h2.title-xl {
+    font-size: 4.5rem;
+    line-height: 1.1;
+}
+
+/* Gradient Text Title — uses theme accent colors */
+h2.title-gradient {
+    background: linear-gradient(135deg, #fff 0%, rgba(var(--accent-1-rgb), 0.95) 50%, rgba(var(--accent-2-rgb), 0.9) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Glowing Title — uses theme accent colors */
+h2.title-glow {
+    text-shadow:
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 40px rgba(var(--accent-1-rgb), 0.4),
+        0 0 60px rgba(var(--accent-2-rgb), 0.3);
+}
+
+/* Title with Animated Underline — uses theme accent colors */
+h2.title-underline {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.75rem;
+}
+
+h2.title-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(var(--accent-1-rgb), 1), rgba(var(--accent-2-rgb), 1), rgba(var(--accent-3-rgb), 1));
+    border-radius: 2px;
+}
+
+/* Title with Badge Prefix - use with .tag before h2 */
+.title-badge-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.title-badge-wrap h2 {
+    margin-bottom: 0;
+}
+
+.title-badge-wrap .tag {
+    margin-bottom: 0;
+}
+
+/* Combined styles */
+h2.title-xl.title-gradient {
+    font-size: 4.5rem;
+}
+
+h2.title-xl.title-glow {
+    font-size: 4.5rem;
+}
+
+p {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--white-80);
+    margin-bottom: var(--element-margin);
+}
+
+/* ============================================
+   SECTION TAG
+   Use: <span class="tag">Section Name</span>
+   ============================================ */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-xs);
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-uppercase);
+    color: var(--white);
+    text-shadow: var(--shadow-text);
+    margin-bottom: var(--element-margin);
+}
+
+.tag::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 1), rgba(var(--accent-2-rgb), 0.8));
+    box-shadow: 0 0 8px rgba(var(--accent-1-rgb), 0.5);
+    flex-shrink: 0;
+}
+
+/* ============================================
+   TWO COLUMN LAYOUT
+   Use: <div class="two-col"><div>Left</div><div>Right</div></div>
+   ============================================ */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--section-gap);
+    align-items: start;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    font-size: var(--font-size-body);
+    color: var(--white-80);
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 8px;
+    height: 8px;
+    background: rgba(var(--accent-1-rgb), 0.9);
+    border-radius: 2px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 6px rgba(var(--accent-1-rgb), 0.3);
+}
+
+ul li:nth-child(4n+2)::before {
+    background: rgba(var(--accent-2-rgb), 0.9);
+    box-shadow: 0 0 6px rgba(var(--accent-2-rgb), 0.3);
+}
+ul li:nth-child(4n+3)::before {
+    background: rgba(var(--accent-3-rgb), 0.9);
+    box-shadow: 0 0 6px rgba(var(--accent-3-rgb), 0.3);
+}
+ul li:nth-child(4n)::before {
+    background: rgba(var(--accent-4-rgb), 0.9);
+    box-shadow: 0 0 6px rgba(var(--accent-4-rgb), 0.3);
+}
+
+/* ============================================
+   CODE BLOCKS
+   Use: <div class="code-block"><code>...</code></div>
+   ============================================ */
+.code-block {
+    background: var(--black-50);
+    backdrop-filter: blur(var(--backdrop-blur-sm));
+    border-radius: var(--border-radius-md);
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    overflow-x: auto;
+    border: 1px solid var(--white-10);
+    margin: 1rem 0;
+}
+
+.code-block code {
+    color: var(--white-80);
+}
+
+/* Inline command/code */
+.cmd {
+    font-family: var(--font-mono);
+    background: var(--black-30);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--border-radius-xs);
+    font-size: 0.85em;
+    color: var(--white);
+    border: 1px solid var(--white-20);
+}

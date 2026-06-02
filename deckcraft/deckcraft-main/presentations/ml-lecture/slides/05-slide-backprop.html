@@ -1,0 +1,41 @@
+<div class="slide" data-section="backprop" data-order="5">
+    <div class="slide-content">
+        <span class="tag">Backprop</span>
+        <h2>Backpropagation</h2>
+        <p class="fragment fade-up">Weight update via gradient descent:</p>
+        <div class="math-block fragment fade-up">
+            w &larr; w &minus; &eta;
+            <span class="math-frac">
+                <span class="numerator">&part;L</span>
+                <span class="denominator">&part;w</span>
+            </span>
+        </div>
+        <p class="fragment fade-up">Chain rule through layers:</p>
+        <div class="math-block fragment fade-up">
+            <span class="math-frac">
+                <span class="numerator">&part;L</span>
+                <span class="denominator">&part;w<sub>1</sub></span>
+            </span>
+            =
+            <span class="math-frac">
+                <span class="numerator">&part;L</span>
+                <span class="denominator">&part;a<sub>2</sub></span>
+            </span>
+            &middot;
+            <span class="math-frac">
+                <span class="numerator">&part;a<sub>2</sub></span>
+                <span class="denominator">&part;z<sub>2</sub></span>
+            </span>
+            &middot;
+            <span class="math-frac">
+                <span class="numerator">&part;z<sub>2</sub></span>
+                <span class="denominator">&part;a<sub>1</sub></span>
+            </span>
+            &middot;
+            <span class="math-frac">
+                <span class="numerator">&part;a<sub>1</sub></span>
+                <span class="denominator">&part;w<sub>1</sub></span>
+            </span>
+        </div>
+    </div>
+</div>

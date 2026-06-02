@@ -1,0 +1,376 @@
+/**
+ * PRINT.CSS - Print Stylesheet for Presentation Handouts
+ *
+ * Provides @media print rules to generate clean, readable handouts
+ * from DeckCraft presentations. All slides are shown vertically,
+ * one per page, with print-friendly colors and formatting.
+ *
+ * Also includes a .print-ready class for on-screen print preview.
+ *
+ * Usage:
+ *   - Print via browser: Ctrl+P / Cmd+P
+ *   - Print preview class: add .print-ready to <body>
+ */
+
+/* ============================================
+   PRINT MEDIA RULES
+   ============================================ */
+@media print {
+    /* Force color printing */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Reset body for print */
+    body {
+        overflow: visible !important;
+        height: auto !important;
+        background: white !important;
+        color: #1a1a1a !important;
+        font-size: 12pt !important;
+    }
+
+    /* Show all slides vertically */
+    .presentation {
+        height: auto !important;
+        position: static !important;
+        overflow: visible !important;
+    }
+
+    .slide {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        height: auto !important;
+        min-height: 100vh;
+        page-break-after: always;
+        page-break-inside: avoid;
+        background: white !important;
+        color: #1a1a1a !important;
+        display: flex !important;
+        overflow: visible !important;
+    }
+
+    .slide:last-child {
+        page-break-after: auto;
+    }
+
+    .slide-content {
+        max-width: 100% !important;
+    }
+
+    /* Remove all navigation and UI elements */
+    .nav,
+    .progress-bar,
+    .section-indicator,
+    .theme-switcher,
+    .profile-switcher,
+    .fullscreen-toggle,
+    .slide-counter,
+    .nav-btn {
+        display: none !important;
+    }
+
+    /* Remove glassmorphism effects */
+    .card,
+    .stat-card,
+    .diagram,
+    .flow-box,
+    .table-container,
+    .highlight-box,
+    .icon-wrapper {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: #f5f5f5 !important;
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+    }
+
+    /* Text colors for print */
+    h1, h2, h3, h4 {
+        color: #1a1a1a !important;
+        text-shadow: none !important;
+    }
+
+    p, li, td, th, span, div {
+        color: #333 !important;
+    }
+
+    /* Gradient text fix for print */
+    h2.title-gradient,
+    .title-gradient {
+        -webkit-text-fill-color: #1a1a1a !important;
+        background: none !important;
+        background-clip: unset !important;
+        -webkit-background-clip: unset !important;
+    }
+
+    /* Tag/label styling */
+    .tag {
+        background: #e0e0e0 !important;
+        color: #333 !important;
+        border: 1px solid #ccc !important;
+    }
+
+    /* Subtitle */
+    .subtitle {
+        color: #555 !important;
+    }
+
+    /* Lists */
+    ul li::before {
+        color: #666 !important;
+    }
+
+    /* Links - show URL */
+    a {
+        color: #1a1a1a !important;
+        text-decoration: underline !important;
+    }
+
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+        word-break: break-all;
+    }
+
+    /* Keep terminal/code blocks dark for contrast */
+    .terminal {
+        background: #1e1e1e !important;
+        border: 1px solid #333 !important;
+    }
+
+    .terminal-header {
+        background: #323233 !important;
+    }
+
+    .terminal-body {
+        color: #e0e0e0 !important;
+    }
+
+    .terminal-line,
+    .terminal-line span {
+        color: #e0e0e0 !important;
+    }
+
+    .terminal-line.success,
+    .terminal-line.success span {
+        color: #4ade80 !important;
+    }
+
+    .terminal-line.error,
+    .terminal-line.error span {
+        color: #f87171 !important;
+    }
+
+    .terminal-line.warning,
+    .terminal-line.warning span {
+        color: #facc15 !important;
+    }
+
+    .terminal-line.info,
+    .terminal-line.info span {
+        color: #22d3ee !important;
+    }
+
+    /* Code blocks stay dark */
+    .code-block {
+        background: #1e1e1e !important;
+        border: 1px solid #333 !important;
+    }
+
+    .code-block code {
+        color: #e0e0e0 !important;
+    }
+
+    pre[class*="language-"] {
+        background: #1e1e1e !important;
+        border: 1px solid #333 !important;
+    }
+
+    /* Inline code */
+    .cmd {
+        background: #e8e8e8 !important;
+        color: #1a1a1a !important;
+        border: 1px solid #ccc !important;
+    }
+
+    /* Stats */
+    .stat-value {
+        color: #1a1a1a !important;
+    }
+
+    .stat-label {
+        color: #666 !important;
+    }
+
+    .stat-trend.up {
+        color: #16a34a !important;
+    }
+
+    .stat-trend.down {
+        color: #dc2626 !important;
+    }
+
+    /* Flow diagrams */
+    .flow-arrow {
+        color: #666 !important;
+    }
+
+    .flow-box.highlight {
+        border-color: #333 !important;
+    }
+
+    /* Tables */
+    table {
+        border-collapse: collapse !important;
+    }
+
+    th {
+        background: #e0e0e0 !important;
+        color: #1a1a1a !important;
+        border: 1px solid #ccc !important;
+    }
+
+    td {
+        border: 1px solid #ddd !important;
+    }
+
+    /* Math blocks */
+    .math-block {
+        background: #f5f5f5 !important;
+        border: 1px solid #ddd !important;
+        color: #1a1a1a !important;
+    }
+
+    .math, .math-block,
+    .math-frac, .math-sqrt,
+    .math-sum, .math-prod,
+    .math-integral, .math-matrix {
+        color: #1a1a1a !important;
+    }
+
+    .math-frac .numerator {
+        border-bottom-color: #333 !important;
+    }
+
+    .math-sqrt .radicand {
+        border-top-color: #333 !important;
+    }
+
+    .math-matrix {
+        border-color: #333 !important;
+    }
+
+    /* Show all fragments (reveal hidden build items) */
+    .fragment {
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+    }
+
+    /* Timeline */
+    .timeline-line {
+        background: #ccc !important;
+    }
+
+    .timeline-dot {
+        background: #666 !important;
+        border-color: #666 !important;
+    }
+
+    /* Icons */
+    .icon-wrapper {
+        background: #e8e8e8 !important;
+    }
+
+    .icon-wrapper svg {
+        stroke: #333 !important;
+    }
+
+    /* Slide numbers via CSS counter */
+    body {
+        counter-reset: slide-number;
+    }
+
+    .slide {
+        counter-increment: slide-number;
+    }
+
+    .slide::after {
+        content: counter(slide-number);
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        font-size: 0.8rem;
+        color: #999 !important;
+    }
+
+    /* Remove animations */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Typing text - show fully */
+    .typing-text {
+        width: 100% !important;
+        border-right: none !important;
+    }
+
+    /* Images - constrain to page */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    /* Avoid breaking inside key elements */
+    .card,
+    .stat-card,
+    .terminal,
+    .code-block,
+    .math-block,
+    .highlight-box,
+    .diagram,
+    .flow-diagram {
+        page-break-inside: avoid;
+    }
+}
+
+/* ============================================
+   ON-SCREEN PRINT PREVIEW
+   Add .print-ready to <body> for preview
+   ============================================ */
+.print-ready .slide {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    min-height: 100vh;
+    border-bottom: 2px dashed #ccc;
+    margin-bottom: 2rem;
+}
+
+.print-ready .presentation {
+    height: auto !important;
+    position: static !important;
+    overflow: visible !important;
+}
+
+.print-ready .nav,
+.print-ready .progress-bar,
+.print-ready .section-indicator,
+.print-ready .theme-switcher,
+.print-ready .profile-switcher,
+.print-ready .fullscreen-toggle {
+    display: none !important;
+}
+
+.print-ready .fragment {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}

@@ -1,0 +1,151 @@
+<!-- DATA/TABLE SLIDE TEMPLATE
+     For data presentation, feature matrices, pricing tables, comparisons
+     Replace content in {BRACES} with your values
+
+     Uses: .table-container, table styling from presentation.css
+
+     Row Highlighting:
+       - Add style="background: var(--white-10);" to <tr> for emphasis
+       - Or add a custom class for consistent highlighting
+-->
+<div class="slide" data-section="{SECTION}" data-order="{ORDER}">
+    <div class="slide-content">
+        <span class="tag">{Section Label}</span>
+        <h2>{Data Title}</h2>
+        <p>{Description of what the data shows}</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>{Column 1}</th>
+                        <th>{Column 2}</th>
+                        <th>{Column 3}</th>
+                        <th>{Column 4}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{Row 1 Data}</td>
+                        <td>{Data}</td>
+                        <td>{Data}</td>
+                        <td>{Data}</td>
+                    </tr>
+                    <tr>
+                        <td>{Row 2 Data}</td>
+                        <td>{Data}</td>
+                        <td>{Data}</td>
+                        <td>{Data}</td>
+                    </tr>
+                    <!-- Highlighted row - use inline style for emphasis -->
+                    <tr style="background: var(--white-10);">
+                        <td><strong>{Important Row}</strong></td>
+                        <td>{Data}</td>
+                        <td>{Data}</td>
+                        <td>{Data}</td>
+                    </tr>
+                    <tr>
+                        <td>{Row 4 Data}</td>
+                        <td>{Data}</td>
+                        <td>{Data}</td>
+                        <td>{Data}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- EXAMPLE: Feature Comparison Matrix -->
+<!--
+<div class="slide" data-section="features" data-order="1">
+    <div class="slide-content">
+        <span class="tag">Comparison</span>
+        <h2>Feature Matrix</h2>
+        <p>How we compare against the competition</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Our Product</th>
+                        <th>Competitor A</th>
+                        <th>Competitor B</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Real-time sync</td>
+                        <td>Yes</td>
+                        <td>Limited</td>
+                        <td>No</td>
+                    </tr>
+                    <tr style="background: var(--white-10);">
+                        <td><strong>Offline support</strong></td>
+                        <td>Full</td>
+                        <td>None</td>
+                        <td>Partial</td>
+                    </tr>
+                    <tr>
+                        <td>API access</td>
+                        <td>Unlimited</td>
+                        <td>100/day</td>
+                        <td>500/day</td>
+                    </tr>
+                    <tr>
+                        <td>Custom themes</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                        <td>Premium only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+-->
+
+<!-- EXAMPLE: Pricing Table -->
+<!--
+<div class="slide" data-section="pricing" data-order="1">
+    <div class="slide-content">
+        <span class="tag">Pricing</span>
+        <h2>Simple, Transparent Pricing</h2>
+        <p>Choose the plan that works for your team</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Users</th>
+                        <th>Storage</th>
+                        <th>Price/month</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Starter</td>
+                        <td>1-5</td>
+                        <td>10 GB</td>
+                        <td>$29</td>
+                    </tr>
+                    <tr style="background: var(--white-10);">
+                        <td><strong>Professional</strong></td>
+                        <td>6-25</td>
+                        <td>100 GB</td>
+                        <td>$99</td>
+                    </tr>
+                    <tr>
+                        <td>Enterprise</td>
+                        <td>Unlimited</td>
+                        <td>Unlimited</td>
+                        <td>Contact us</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+-->

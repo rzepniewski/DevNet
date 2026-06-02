@@ -1,0 +1,63 @@
+<div class="slide" data-section="algorithms" data-order="4">
+    <div class="slide-content">
+        <span class="tag">Algorithms</span>
+        <h2>Linear Regression</h2>
+        <p>The foundational algorithm for predicting continuous outcomes from input features.</p>
+
+        <div class="two-col">
+            <div>
+                <h3>Model Formulation</h3>
+                <div class="code-block">
+                    <code>
+h(x) = θ₀ + θ₁x₁ + θ₂x₂ + ... + θₙxₙ
+
+Or in vector form:
+h(x) = θᵀx
+
+Where:
+- x = input features
+- θ = model parameters
+- h(x) = predicted output
+                    </code>
+                </div>
+            </div>
+            <div>
+                <h3>Cost Function</h3>
+                <div class="code-block">
+                    <code>
+J(θ) = (1/2m) Σᵢ (h(xⁱ) - yⁱ)²
+
+Mean Squared Error (MSE)
+- Measures prediction accuracy
+- Convex function
+- Unique global minimum
+                    </code>
+                </div>
+            </div>
+        </div>
+
+        <div class="diagram">
+            <div class="flow-diagram">
+                <div class="flow-box">
+                    <h4>Initialize</h4>
+                    <p>θ = 0</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-box">
+                    <h4>Compute</h4>
+                    <p>∇J(θ)</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-box highlight">
+                    <h4>Update</h4>
+                    <p>θ := θ - α∇J</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-box">
+                    <h4>Converge?</h4>
+                    <p>Check cost</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

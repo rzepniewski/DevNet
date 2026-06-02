@@ -1,0 +1,97 @@
+{
+  "env": {
+    "MAX_MCP_OUTPUT_TOKENS": "50000",
+    "MAX_THINKING_TOKENS": "10240",
+    "SEMGREP_ALLOW_LOCAL_SCAN": "1",
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000",
+    "auth_mode": "duo-sso",
+    "ORGANIZATION": "cx",
+    "AWS_PROFILE": "svs-devops-880",
+    "AWS_REGION": "us-east-2",
+    "OTEL_RESOURCE_ATTRIBUTES": "organization=Cisco,manager=MANAGER_CEC,cec=YOUR_CEC",
+    "OTEL_SDK_DISABLED": "true"
+  },
+  "model": "us.anthropic.claude-sonnet-4-6-v1[1m]",
+  "enableAllProjectMcpServers": true,
+  "includeCoAuthoredBy": false,
+  "effortLevel": "high",
+  "permissions": {
+    "deny": [
+      "Bash(rm :*)",
+      "Bash(rm -rf :*)",
+      "Bash(rm -r :*)",
+      "Bash(:\\(\\){:|:&};:)",
+      "Bash(dd :*)",
+      "Bash(mkfs :*)",
+      "Bash(printenv)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(**/.env*)",
+      "Read(**/env.php*)",
+      "Read(./secrets/**)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials/**)",
+      "Read(**/.aws/**)",
+      "Read(**/.ssh/**)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.p12)",
+      "Read(**/*.pfx)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/send_to_splunk_hec.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/send_to_splunk_hec.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/send_to_splunk_hec.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/user_prompt_submit.py",
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 0
+  },
+  "skipDangerousModePermissionPrompt": true
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Design Portfolio 2024",
+  "defaultTheme": "rose",
+  "defaultProfile": "creative",
+  "sections": ["intro", "projects", "process", "testimonials", "contact"],
+  "output": {
+    "dir": "output",
+    "filename": "presentation.html"
+  },
+  "assets": {
+    "inlineThreshold": 10240
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "title": "Q4 2025 Business Analytics Review",
+  "defaultTheme": "mesh",
+  "defaultProfile": "corporate",
+  "sections": ["intro", "revenue", "growth", "pipeline", "customers", "operations", "outlook"],
+  "output": { "dir": "output" }
+}

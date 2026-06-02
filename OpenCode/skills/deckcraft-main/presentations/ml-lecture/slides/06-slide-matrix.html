@@ -1,0 +1,31 @@
+<div class="slide" data-section="backprop" data-order="6">
+    <div class="slide-content">
+        <span class="tag">Backprop</span>
+        <h2>Weight Matrices</h2>
+        <p>A layer transforms inputs via matrix multiplication:</p>
+        <div class="math-block">
+            <div class="math-matrix" style="display: inline-flex;">
+                <div class="matrix-row"><span>z<sub>1</sub></span></div>
+                <div class="matrix-row"><span>z<sub>2</sub></span></div>
+                <div class="matrix-row"><span>z<sub>3</sub></span></div>
+            </div>
+            =
+            <div class="math-matrix" style="display: inline-flex;">
+                <div class="matrix-row"><span>w<sub>11</sub></span><span>w<sub>12</sub></span></div>
+                <div class="matrix-row"><span>w<sub>21</sub></span><span>w<sub>22</sub></span></div>
+                <div class="matrix-row"><span>w<sub>31</sub></span><span>w<sub>32</sub></span></div>
+            </div>
+            <div class="math-matrix" style="display: inline-flex;">
+                <div class="matrix-row"><span>x<sub>1</sub></span></div>
+                <div class="matrix-row"><span>x<sub>2</sub></span></div>
+            </div>
+            +
+            <div class="math-matrix" style="display: inline-flex;">
+                <div class="matrix-row"><span>b<sub>1</sub></span></div>
+                <div class="matrix-row"><span>b<sub>2</sub></span></div>
+                <div class="matrix-row"><span>b<sub>3</sub></span></div>
+            </div>
+        </div>
+        <p class="fragment fade-up">Or compactly: <span class="math">z = Wx + b</span></p>
+    </div>
+</div>

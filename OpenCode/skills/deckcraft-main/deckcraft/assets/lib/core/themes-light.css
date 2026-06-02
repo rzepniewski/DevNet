@@ -1,0 +1,173 @@
+/* ============================================
+   LIGHT THEMES (dark text on light backgrounds)
+   These override CSS variables so all components
+   automatically adapt without per-component rules.
+   ============================================ */
+
+/* --- Theme: Light (Clean White/Gray) --- */
+.theme-light .slide {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #f1f3f5 50%, #e9ecef 75%, #dee2e6 100%);
+}
+
+.theme-light {
+    background: #f1f3f5;
+    --white: #1a1a2e;
+    --white-90: rgba(26, 26, 46, 0.9);
+    --white-80: rgba(26, 26, 46, 0.8);
+    --white-60: rgba(26, 26, 46, 0.6);
+    --white-40: rgba(26, 26, 46, 0.4);
+    --white-30: rgba(26, 26, 46, 0.3);
+    --white-20: rgba(26, 26, 46, 0.15);
+    --white-10: rgba(26, 26, 46, 0.08);
+    --white-05: rgba(26, 26, 46, 0.04);
+    --black: #ffffff;
+    --black-50: rgba(255, 255, 255, 0.85);
+    --black-30: rgba(26, 26, 46, 0.1);
+    --black-20: rgba(26, 26, 46, 0.06);
+    --shadow-text: none;
+    --shadow-text-lg: none;
+    --shadow-glow: 0 0 15px rgba(26, 26, 46, 0.2);
+    --shadow-card: 0 20px 40px rgba(26, 26, 46, 0.08);
+}
+
+/* --- Theme: Warm (Cream/Off-White) --- */
+.theme-warm .slide {
+    background: linear-gradient(135deg, #fffbf5 0%, #fef7ed 25%, #fdf2e9 50%, #fcebd4 75%, #fbe4c4 100%);
+}
+
+.theme-warm {
+    background: #fdf2e9;
+    --white: #2c1810;
+    --white-90: rgba(44, 24, 16, 0.9);
+    --white-80: rgba(44, 24, 16, 0.8);
+    --white-60: rgba(44, 24, 16, 0.6);
+    --white-40: rgba(44, 24, 16, 0.4);
+    --white-30: rgba(44, 24, 16, 0.3);
+    --white-20: rgba(44, 24, 16, 0.15);
+    --white-10: rgba(44, 24, 16, 0.08);
+    --white-05: rgba(44, 24, 16, 0.04);
+    --black: #fffbf5;
+    --black-50: rgba(255, 251, 245, 0.85);
+    --black-30: rgba(44, 24, 16, 0.1);
+    --black-20: rgba(44, 24, 16, 0.06);
+    --shadow-text: none;
+    --shadow-text-lg: none;
+    --shadow-glow: 0 0 15px rgba(44, 24, 16, 0.2);
+    --shadow-card: 0 20px 40px rgba(44, 24, 16, 0.08);
+}
+
+/* --- Theme: Cool (Blue-Tinted White) --- */
+.theme-cool .slide {
+    background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 25%, #e8eeff 50%, #dce4ff 75%, #d0d9ff 100%);
+}
+
+.theme-cool {
+    background: #e8eeff;
+    --white: #0f172a;
+    --white-90: rgba(15, 23, 42, 0.9);
+    --white-80: rgba(15, 23, 42, 0.8);
+    --white-60: rgba(15, 23, 42, 0.6);
+    --white-40: rgba(15, 23, 42, 0.4);
+    --white-30: rgba(15, 23, 42, 0.3);
+    --white-20: rgba(15, 23, 42, 0.15);
+    --white-10: rgba(15, 23, 42, 0.08);
+    --white-05: rgba(15, 23, 42, 0.04);
+    --black: #f8faff;
+    --black-50: rgba(248, 250, 255, 0.85);
+    --black-30: rgba(15, 23, 42, 0.1);
+    --black-20: rgba(15, 23, 42, 0.06);
+    --shadow-text: none;
+    --shadow-text-lg: none;
+    --shadow-glow: 0 0 15px rgba(15, 23, 42, 0.2);
+    --shadow-card: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* Light theme title gradient adjustments — use dark text to accent gradient */
+.theme-light h2.title-gradient,
+.theme-warm h2.title-gradient,
+.theme-cool h2.title-gradient {
+    background: linear-gradient(135deg, var(--white) 0%, rgba(var(--accent-1-rgb), 0.95) 50%, rgba(var(--accent-2-rgb), 0.9) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Light theme title glow adjustments — use accent colors */
+.theme-light h2.title-glow,
+.theme-warm h2.title-glow,
+.theme-cool h2.title-glow {
+    text-shadow:
+        0 0 20px rgba(var(--accent-1-rgb), 0.25),
+        0 0 40px rgba(var(--accent-1-rgb), 0.2),
+        0 0 60px rgba(var(--accent-2-rgb), 0.15);
+}
+
+/* Light theme terminal keeps dark background */
+.theme-light .terminal,
+.theme-warm .terminal,
+.theme-cool .terminal {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+.theme-light .terminal-header,
+.theme-warm .terminal-header,
+.theme-cool .terminal-header {
+    background: #323233;
+}
+
+.theme-light .terminal-command,
+.theme-warm .terminal-command,
+.theme-cool .terminal-command {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.theme-light .terminal-output,
+.theme-warm .terminal-output,
+.theme-cool .terminal-output {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-light .terminal-prompt,
+.theme-warm .terminal-prompt,
+.theme-cool .terminal-prompt {
+    color: #27c93f;
+}
+
+.theme-light .terminal-line.success .terminal-output,
+.theme-warm .terminal-line.success .terminal-output,
+.theme-cool .terminal-line.success .terminal-output {
+    color: #27c93f;
+}
+
+.theme-light .terminal-line.error .terminal-output,
+.theme-warm .terminal-line.error .terminal-output,
+.theme-cool .terminal-line.error .terminal-output {
+    color: #ff5f56;
+}
+
+.theme-light .terminal-line.warning .terminal-output,
+.theme-warm .terminal-line.warning .terminal-output,
+.theme-cool .terminal-line.warning .terminal-output {
+    color: #ffbd2e;
+}
+
+.theme-light .terminal-line.info .terminal-output,
+.theme-warm .terminal-line.info .terminal-output,
+.theme-cool .terminal-line.info .terminal-output {
+    color: #06b6d4;
+}
+
+/* Light theme code block keeps dark background */
+.theme-light .code-block,
+.theme-warm .code-block,
+.theme-cool .code-block {
+    background: rgba(30, 30, 30, 0.9);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-light .code-block code,
+.theme-warm .code-block code,
+.theme-cool .code-block code {
+    color: rgba(255, 255, 255, 0.8);
+}

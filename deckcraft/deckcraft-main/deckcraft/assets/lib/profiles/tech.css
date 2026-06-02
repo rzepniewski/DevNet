@@ -1,0 +1,67 @@
+/**
+ * DeckCraft - Tech/Startup Style Profile
+ * Modern, bold aesthetic with glassmorphism and generous spacing
+ * Apply with: <body class="theme-{color} profile-tech">
+ *
+ * Characteristics:
+ * - Bold, modern typography (large headings, tight letter-spacing)
+ * - Generous whitespace and breathing room
+ * - Large border-radius (16px+) for modern feel
+ * - Glassmorphism effects (backdrop blur, semi-transparent backgrounds)
+ * - Glowing accents and smooth hover transitions
+ */
+
+.profile-tech {
+    /* Typography - bold and modern */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Font Sizes - large and impactful */
+    --font-size-h1: 5rem;
+    --font-size-h2: 3.5rem;
+    --font-size-h3: 1.8rem;
+    --font-size-body: 1.35rem;
+
+    /* Font Weights - bold headings */
+    --font-weight-heading: 800;
+    --font-weight-h1: 900;
+    --font-weight-h4: 700;
+
+    /* Letter Spacing - tight for modern look */
+    --letter-spacing-heading: -0.02em;
+    --letter-spacing-uppercase: 0.1em;
+
+    /* Line Height - comfortable reading */
+    --line-height-body: 1.7;
+    --line-height-heading: 1.1;
+
+    /* Spacing - generous whitespace */
+    --slide-padding: 60px 80px;
+    --card-padding: 2rem;
+    --section-gap: 2rem;
+    --element-margin: 1.5rem;
+
+    /* Borders - large radius for modern feel */
+    --border-radius-xs: 4px;
+    --border-radius-sm: 6px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 20px;
+    --border-radius-full: 9999px;
+
+    /* Glassmorphism Effects */
+    --backdrop-blur: 20px;
+    --backdrop-blur-sm: 10px;
+
+    /* Shadows - glowing accents */
+    --shadow-card: 0 20px 40px var(--black-30);
+    --shadow-text: 0 2px 20px var(--black-30);
+    --shadow-text-lg: 0 4px 30px var(--black-50);
+    --shadow-glow: 0 0 15px var(--white-60);
+
+    /* Transitions - smooth and responsive */
+    --transition-default: all 0.3s ease;
+    --transition-fast: all 0.2s ease;
+    --transition-slide: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}

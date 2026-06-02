@@ -1,0 +1,340 @@
+/**
+ * Prism.js Theme for DeckCraft
+ *
+ * A dark theme optimized for presentation slides with gradient backgrounds.
+ * Works with all DeckCraft themes (mesh, purple, cyan, emerald, orange, rose, blue, dark).
+ *
+ * Based on Prism.js themes (MIT License)
+ * Customized for dark backgrounds with subtle, non-clashing colors.
+ */
+
+/* Code blocks container styling */
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #e2e8f0;
+    background: none;
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.6;
+    tab-size: 4;
+    hyphens: none;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    white-space: normal;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Code block within .code-block container */
+.code-block pre {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: auto;
+}
+
+.code-block code {
+    display: block;
+}
+
+/* Pre tag styling for standalone use */
+pre[class*="language-"] {
+    padding: 1.25rem 1.5rem;
+    margin: 0;
+    overflow: auto;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   TOKEN COLORS
+   Subtle, muted colors that work on dark backgrounds
+   and don't clash with theme gradients
+   ============================================ */
+
+/* Comments - muted gray */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Punctuation - subtle gray */
+.token.punctuation {
+    color: #9ca3af;
+}
+
+/* Namespace - slightly dimmed */
+.token.namespace {
+    opacity: 0.8;
+}
+
+/* Strings - soft green (works with all themes) */
+.token.string,
+.token.attr-value,
+.token.template-string {
+    color: #86efac;
+}
+
+/* Property names - soft blue */
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #93c5fd;
+}
+
+/* Selectors, attributes - soft cyan */
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #67e8f9;
+}
+
+/* Operators - soft pink */
+.token.operator,
+.token.entity,
+.token.url {
+    color: #f9a8d4;
+}
+
+/* Keywords - soft purple */
+.token.keyword,
+.token.atrule {
+    color: #c4b5fd;
+}
+
+/* Functions - soft amber */
+.token.function,
+.token.class-name {
+    color: #fcd34d;
+}
+
+/* Regex - soft orange */
+.token.regex,
+.token.important,
+.token.variable {
+    color: #fdba74;
+}
+
+/* Important - bold */
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+/* Italic */
+.token.italic {
+    font-style: italic;
+}
+
+/* Entity */
+.token.entity {
+    cursor: help;
+}
+
+/* ============================================
+   LANGUAGE-SPECIFIC ADJUSTMENTS
+   ============================================ */
+
+/* JSON property names */
+.language-json .token.property {
+    color: #93c5fd;
+}
+
+/* JSON string values */
+.language-json .token.string {
+    color: #86efac;
+}
+
+/* Python decorators */
+.language-python .token.decorator {
+    color: #c4b5fd;
+}
+
+/* Python builtin functions */
+.language-python .token.builtin {
+    color: #67e8f9;
+}
+
+/* Bash/Shell variables */
+.language-bash .token.variable,
+.language-shell .token.variable {
+    color: #fdba74;
+}
+
+/* Bash/Shell environment */
+.language-bash .token.environment,
+.language-shell .token.environment {
+    color: #67e8f9;
+}
+
+/* HTML/Markup tags */
+.language-markup .token.tag,
+.language-html .token.tag,
+.language-xml .token.tag {
+    color: #f9a8d4;
+}
+
+/* HTML/Markup attributes */
+.language-markup .token.attr-name,
+.language-html .token.attr-name,
+.language-xml .token.attr-name {
+    color: #67e8f9;
+}
+
+/* CSS selectors */
+.language-css .token.selector {
+    color: #f9a8d4;
+}
+
+/* CSS properties */
+.language-css .token.property {
+    color: #67e8f9;
+}
+
+/* CSS values */
+.language-css .token.function {
+    color: #fcd34d;
+}
+
+/* TypeScript types */
+.language-typescript .token.builtin,
+.language-ts .token.builtin {
+    color: #67e8f9;
+}
+
+/* JSX tags */
+.language-jsx .token.tag {
+    color: #f9a8d4;
+}
+
+/* Go types and builtins */
+.language-go .token.builtin {
+    color: #67e8f9;
+}
+
+/* Rust macros and attributes */
+.language-rust .token.macro {
+    color: #fcd34d;
+}
+
+.language-rust .token.attribute {
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* SQL keywords */
+.language-sql .token.keyword {
+    color: #c4b5fd;
+    text-transform: uppercase;
+}
+
+.language-sql .token.function {
+    color: #fcd34d;
+}
+
+/* YAML keys */
+.language-yaml .token.key,
+.language-yml .token.key {
+    color: #67e8f9;
+}
+
+.language-yaml .token.tag,
+.language-yml .token.tag {
+    color: #fdba74;
+}
+
+.language-yaml .token.anchor,
+.language-yml .token.anchor {
+    color: #f9a8d4;
+}
+
+/* ============================================
+   SELECTION HIGHLIGHT
+   ============================================ */
+
+code[class*="language-"]::selection,
+code[class*="language-"] *::selection,
+pre[class*="language-"]::selection,
+pre[class*="language-"] *::selection {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] *::-moz-selection,
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] *::-moz-selection {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   LINE NUMBERS (optional - if implemented)
+   ============================================ */
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 1.25rem;
+    font-size: 100%;
+    left: -3.5em;
+    width: 3em;
+    letter-spacing: -1px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    user-select: none;
+}
+
+.line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+}
+
+.line-numbers-rows > span::before {
+    content: counter(linenumber);
+    color: rgba(255, 255, 255, 0.3);
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+}
+
+/* ============================================
+   DIFF HIGHLIGHTING (optional)
+   ============================================ */
+
+.token.deleted {
+    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.15);
+}
+
+.token.inserted {
+    color: #86efac;
+    background: rgba(34, 197, 94, 0.15);
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    code[class*="language-"],
+    pre[class*="language-"] {
+        text-shadow: none;
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "title": "TechVenture AI - Series A Pitch",
+  "defaultTheme": "purple",
+  "defaultProfile": "tech",
+  "sections": ["intro", "problem", "solution", "demo", "business", "team", "ask"],
+  "output": {
+    "dir": "output",
+    "filename": "presentation.html"
+  },
+  "assets": {
+    "inlineThreshold": 10240
+  }
+}

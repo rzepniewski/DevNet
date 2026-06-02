@@ -1,0 +1,226 @@
+/* ============================================
+   FRAGMENT / BUILD ANIMATIONS
+   Elements with .fragment start hidden on the active slide.
+   Adding .visible reveals them with the chosen animation.
+
+   Classes:
+     .fragment             - Base (default: fade-up)
+     .fragment.fade-in     - Simple opacity fade
+     .fragment.fade-up     - Fade in from below (default)
+     .fragment.fade-down   - Fade in from above
+     .fragment.fade-left   - Fade in from left
+     .fragment.fade-right  - Fade in from right
+     .fragment.grow        - Scale up from 0.5
+     .fragment.shrink      - Scale down from 1.5
+     .fragment.highlight-current - Dims previous fragments
+   ============================================ */
+
+/* Base fragment - hidden by default (fade-up) */
+.fragment {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Revealed state */
+.fragment.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* fade-in: opacity only */
+.fragment.fade-in {
+    transform: none;
+}
+
+.fragment.fade-in.visible {
+    opacity: 1;
+}
+
+/* fade-up: default behavior (redundant but explicit) */
+.fragment.fade-up {
+    transform: translateY(20px);
+}
+
+.fragment.fade-up.visible {
+    transform: translateY(0);
+}
+
+/* fade-down */
+.fragment.fade-down {
+    transform: translateY(-20px);
+}
+
+.fragment.fade-down.visible {
+    transform: translateY(0);
+}
+
+/* fade-left */
+.fragment.fade-left {
+    transform: translateX(-20px);
+}
+
+.fragment.fade-left.visible {
+    transform: translateX(0);
+}
+
+/* fade-right */
+.fragment.fade-right {
+    transform: translateX(20px);
+}
+
+.fragment.fade-right.visible {
+    transform: translateX(0);
+}
+
+/* grow */
+.fragment.grow {
+    transform: scale(0.5);
+}
+
+.fragment.grow.visible {
+    transform: scale(1);
+}
+
+/* shrink */
+.fragment.shrink {
+    transform: scale(1.5);
+}
+
+.fragment.shrink.visible {
+    transform: scale(1);
+}
+
+/* highlight-current uses inline opacity set by JS for dimming siblings */
+.fragment.highlight-current {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* ============================================
+   SLIDE TRANSITIONS
+   Control how slides enter and exit.
+
+   Global: add body class .transition-{type}
+   Per-slide: add data-transition="{type}" attribute
+
+   Types:
+     none  - Instant show/hide
+     fade  - Cross-fade (default)
+     slide - Slide horizontally
+     zoom  - Zoom in/out
+   ============================================ */
+
+/* --- Transition: None --- */
+.transition-none .slide {
+    transition: none;
+    transform: none;
+}
+
+.transition-none .slide:not(.active) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.transition-none .slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Transition: Fade (cross-fade, no transform) --- */
+.transition-fade .slide {
+    transform: none;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-fade .slide:not(.active) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.transition-fade .slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Transition: Slide (horizontal) --- */
+.transition-slide .slide {
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.transition-slide .slide.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Slide exiting forward: move left */
+.transition-slide .slide.slide-exit {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: visible;
+}
+
+/* Slide entering forward: start from right (handled by default) */
+.transition-slide .slide.slide-enter {
+    visibility: visible;
+}
+
+/* Backward direction: reverse the slide direction */
+[data-transition-direction="backward"].transition-slide .slide.slide-exit {
+    transform: translateX(100%);
+}
+
+[data-transition-direction="backward"].transition-slide .slide.slide-enter {
+    transform: translateX(-100%);
+}
+
+[data-transition-direction="backward"].transition-slide .slide.slide-enter.active {
+    transform: translateX(0);
+}
+
+/* --- Transition: Zoom --- */
+.transition-zoom .slide {
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.2);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.transition-zoom .slide.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Zoom exiting: shrink */
+.transition-zoom .slide.slide-exit {
+    transform: scale(0.8);
+    opacity: 0;
+    visibility: visible;
+}
+
+/* Zoom entering: start enlarged */
+.transition-zoom .slide.slide-enter {
+    visibility: visible;
+}
+
+/* Backward zoom: reverse scale direction */
+[data-transition-direction="backward"].transition-zoom .slide.slide-exit {
+    transform: scale(1.2);
+}
+
+[data-transition-direction="backward"].transition-zoom .slide.slide-enter {
+    transform: scale(0.8);
+}
+
+[data-transition-direction="backward"].transition-zoom .slide.slide-enter.active {
+    transform: scale(1);
+}

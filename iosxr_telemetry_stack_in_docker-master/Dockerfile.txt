@@ -1,0 +1,29 @@
+#iosxr_telemetry_stack_in_docker
+#git clone https://wwwin-github.cisco.com/sargandh/iosxr_telemetry_stack_in_docker.git
+
+cd iosxr_telemetry_stack_in_docker/
+
+sudo nano influxdb/scripts/influxdb-init.iql 
+
+sudo docker run --rm \
+    --env-file config_influxdb.env \
+    -v iosxrtelemetrystackindocker_influxdb:/var/lib/influxdb \
+    -v $PWD/influxdb/scripts:/docker-entrypoint-initdb.d \
+    influxdb:1.8.3 /init-influxdb.sh
+
+sudo docker-compose up -d
+sudo docker-compose down -v
+
+
+#mkdir lab_stacks && cd lab_stacks
+#wget https://gitlab.com/dchidell/lab-stacks/-/raw/main/infra_dind_manager/docker-compose.yml
+#sudo docker-compose pull
+#sudo nano docker-compose.yml
+
+#sudo systemctl status vsftpd
+#sudo iptables --list
+
+#cd /etc/netplan/
+#ip -a
+#sudo ip link set ens224 up
+#sudo netplan try

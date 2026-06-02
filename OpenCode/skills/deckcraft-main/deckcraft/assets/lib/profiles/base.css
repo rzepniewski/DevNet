@@ -1,0 +1,190 @@
+/**
+ * STYLE PROFILES - Base Documentation
+ *
+ * Style profiles customize the visual presentation without changing colors.
+ * They control typography, spacing, borders, and effects.
+ *
+ * Usage: Apply profile class to body alongside theme
+ *   <body class="theme-mesh profile-tech">
+ *
+ * Available profiles:
+ *   - profile-tech       (profiles/tech.css)
+ *   - profile-corporate  (profiles/corporate.css)
+ *   - profile-academic   (profiles/academic.css)
+ *   - profile-creative   (profiles/creative.css)
+ *
+ * ============================================
+ * CUSTOMIZABLE CSS VARIABLES
+ * ============================================
+ *
+ * Profiles override these variables to create distinct visual styles.
+ * The default values shown are from presentation.css :root
+ *
+ * TYPOGRAPHY - Font Families
+ * ------------------------------------------
+ * --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif
+ *   Controls: h1, h2, h3, h4 headings
+ *   Examples: 'Playfair Display' (academic), 'Space Grotesk' (tech)
+ *
+ * --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif
+ *   Controls: body text, paragraphs, lists
+ *   Examples: 'Georgia' (academic), 'Work Sans' (corporate)
+ *
+ * --font-mono: 'JetBrains Mono', monospace
+ *   Controls: code blocks, inline code, terminal text
+ *   Examples: 'Fira Code', 'Source Code Pro'
+ *
+ * TYPOGRAPHY - Font Sizes
+ * ------------------------------------------
+ * --font-size-h1: 5rem
+ *   Controls: title-slide h1
+ *
+ * --font-size-h2: 3.5rem
+ *   Controls: slide titles (h2)
+ *
+ * --font-size-h3: 1.8rem
+ *   Controls: section headers (h3), subtitles
+ *
+ * --font-size-h4: 1.3rem
+ *   Controls: card headers (h4)
+ *
+ * --font-size-body: 1.35rem
+ *   Controls: paragraph text, list items
+ *
+ * --font-size-small: 1rem
+ *   Controls: card body text, table text, flow box text
+ *
+ * --font-size-xs: 0.85rem
+ *   Controls: tags, table headers, small labels
+ *
+ * TYPOGRAPHY - Font Weights
+ * ------------------------------------------
+ * --font-weight-heading: 800
+ *   Controls: h2 slide titles
+ *
+ * --font-weight-h1: 900
+ *   Controls: title-slide h1 (typically extra bold)
+ *
+ * --font-weight-h4: 700
+ *   Controls: h4, table headers, tags
+ *
+ * --font-weight-body: 400
+ *   Controls: regular body text
+ *
+ * TYPOGRAPHY - Line Height & Spacing
+ * ------------------------------------------
+ * --line-height-body: 1.7
+ *   Controls: paragraph and list line height
+ *
+ * --line-height-heading: 1.1
+ *   Controls: heading line height
+ *
+ * --letter-spacing-heading: -0.02em
+ *   Controls: heading letter spacing (tighter for large text)
+ *
+ * --letter-spacing-uppercase: 0.1em
+ *   Controls: uppercase labels, tags, table headers
+ *
+ * SPACING
+ * ------------------------------------------
+ * --slide-padding: 60px 80px
+ *   Controls: slide content padding (desktop)
+ *
+ * --slide-padding-md: 40px 50px
+ *   Controls: slide padding at 1200px breakpoint
+ *
+ * --slide-padding-sm: 30px
+ *   Controls: slide padding at 768px breakpoint
+ *
+ * --card-padding: 2rem
+ *   Controls: card internal padding, highlight-box padding
+ *
+ * --section-gap: 2rem
+ *   Controls: gap between major sections, h2 margin
+ *
+ * --content-max-width: 1400px
+ *   Controls: maximum width of slide content
+ *
+ * --element-margin: 1.5rem
+ *   Controls: spacing between elements (p, h3, tags, etc.)
+ *
+ * BORDERS & SHAPES
+ * ------------------------------------------
+ * --border-radius-xs: 4px
+ *   Controls: inline code (.cmd)
+ *
+ * --border-radius-sm: 6px
+ *   Controls: tags, theme swatches, small buttons
+ *
+ * --border-radius-md: 12px
+ *   Controls: code blocks, tables, flow boxes, panels
+ *
+ * --border-radius-lg: 16px
+ *   Controls: cards
+ *
+ * --border-radius-xl: 20px
+ *   Controls: diagrams
+ *
+ * --border-radius-full: 9999px
+ *   Controls: navigation bar, pill shapes
+ *
+ * EFFECTS
+ * ------------------------------------------
+ * --backdrop-blur: 20px
+ *   Controls: glassmorphism blur for cards, panels, nav
+ *
+ * --backdrop-blur-sm: 10px
+ *   Controls: subtle blur for tables, code blocks
+ *
+ * --shadow-card: 0 20px 40px var(--black-30)
+ *   Controls: card hover shadow
+ *
+ * --shadow-text: 0 2px 20px var(--black-30)
+ *   Controls: h2 text shadow
+ *
+ * --shadow-text-lg: 0 4px 30px var(--black-50)
+ *   Controls: h1 text shadow (title slide)
+ *
+ * --shadow-glow: 0 0 15px var(--white-60)
+ *   Controls: active indicator glow
+ *
+ * --transition-default: all 0.3s ease
+ *   Controls: standard transitions (hover, panel open)
+ *
+ * --transition-fast: all 0.2s ease
+ *   Controls: quick transitions (button hover)
+ *
+ * --transition-slide: all 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+ *   Controls: slide transitions
+ *
+ * COMPONENT-SPECIFIC
+ * ------------------------------------------
+ * --card-min-width: 320px
+ *   Controls: minimum card width in grid
+ *
+ * --flow-box-min-width: 180px
+ *   Controls: minimum flow box width
+ *
+ * --nav-button-size: 44px
+ *   Controls: navigation button dimensions
+ *
+ * ============================================
+ * PROFILE TEMPLATE
+ * ============================================
+ *
+ * To create a new profile, copy this template:
+ *
+ * .profile-yourname {
+ *     --font-heading: 'Your Heading Font', sans-serif;
+ *     --font-body: 'Your Body Font', sans-serif;
+ *     --font-size-h1: 5rem;
+ *     --font-weight-heading: 700;
+ *     --letter-spacing-heading: 0;
+ *     --border-radius-md: 8px;
+ *     --border-radius-lg: 12px;
+ *     --backdrop-blur: 15px;
+ * }
+ *
+ * Only override the variables you want to change.
+ * The rest will inherit from :root defaults.
+ */

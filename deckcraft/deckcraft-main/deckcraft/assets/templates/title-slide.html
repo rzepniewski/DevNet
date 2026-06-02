@@ -1,0 +1,94 @@
+<!-- ============================================
+     TITLE SLIDE TEMPLATE
+     ============================================
+
+     A centered title slide with main title, subtitle, and metadata.
+     Perfect for opening slides, section dividers, or end slides.
+
+     USAGE:
+       1. Copy this entire template into your slides/ directory
+       2. Replace content in {BRACES} with your values
+       3. Delete any optional sections you don't need
+       4. Adjust data-section and data-order attributes
+
+     CUSTOMIZATION OPTIONS:
+       - Title: Use h1 for main title (automatically styled large)
+       - Subtitle: Use .subtitle class for tagline (optional)
+       - Meta items: Add/remove .meta-item divs as needed
+       - Icons: Use data-lucide="icon-name" (browse at lucide.dev/icons)
+       - Section: Set data-section for navigation grouping
+       - Order: Set data-order for slide sequence
+
+     STYLING NOTES:
+       - .title-slide centers all content automatically
+       - All colors adapt to the active theme
+       - Meta items wrap responsively on smaller screens
+============================================ -->
+
+<div class="slide title-slide" data-section="{SECTION_NAME}" data-order="{ORDER_NUMBER}">
+    <div class="slide-content">
+
+        <!-- ========================================
+             MAIN TITLE
+             Required. The primary heading of your slide.
+             Automatically sized at 5rem with text shadow.
+        ======================================== -->
+        <h1>{Your Presentation Title}</h1>
+
+        <!-- ========================================
+             SUBTITLE (Optional)
+             A brief tagline, description, or secondary info.
+             Delete this section if not needed.
+        ======================================== -->
+        <div class="subtitle">{A brief tagline or description}</div>
+
+        <!-- ========================================
+             META INFORMATION (Optional)
+             Displays key information with icons.
+             Add, remove, or modify .meta-item divs as needed.
+             Delete entire .meta section if not needed.
+             Browse icons at: https://lucide.dev/icons
+        ======================================== -->
+        <div class="meta">
+
+            <!-- Date Meta Item -->
+            <div class="meta-item">
+                <i data-lucide="calendar"></i>
+                <span>{Date}</span>
+            </div>
+
+            <!-- Author/Presenter Meta Item -->
+            <div class="meta-item">
+                <i data-lucide="user"></i>
+                <span>{Author Name}</span>
+            </div>
+
+            <!-- Company/Organization Meta Item -->
+            <div class="meta-item">
+                <i data-lucide="building"></i>
+                <span>{Company/Organization}</span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- ============================================
+     COMMON META ICONS
+     ============================================
+
+     Use any Lucide icon name with data-lucide="...":
+
+     <i data-lucide="calendar"></i>       Date/Schedule
+     <i data-lucide="user"></i>           Author/Person
+     <i data-lucide="building"></i>       Company/Org
+     <i data-lucide="mail"></i>           Email
+     <i data-lucide="map-pin"></i>        Location
+     <i data-lucide="link"></i>           Website/Link
+     <i data-lucide="phone"></i>          Phone
+     <i data-lucide="tag"></i>            Version/Tag
+     <i data-lucide="clock"></i>          Time
+
+     Browse all 1,500+ icons at: https://lucide.dev/icons
+============================================ -->

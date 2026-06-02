@@ -1,0 +1,100 @@
+/**
+ * DeckCraft - Corporate Style Profile
+ * Clean, professional aesthetic with conservative styling
+ * Apply with: <body class="theme-{color} profile-corporate">
+ *
+ * Characteristics:
+ * - Conservative typography (clean sans-serif, moderate weights)
+ * - Tighter spacing for content density
+ * - Smaller border-radius for professional look
+ * - Subtle shadows, no glassmorphism/blur effects
+ * - Muted transitions (faster, less dramatic)
+ * - Solid backgrounds preferred over transparency
+ */
+
+.profile-corporate {
+  /* ========================================
+   * TYPOGRAPHY - Clean and Readable
+   * ======================================== */
+
+  /* Professional sans-serif stack */
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'SF Mono', 'Consolas', 'Monaco', monospace;
+
+  /* Moderate font weights - professional, not flashy */
+  --font-weight-heading: 700;
+  --font-weight-h1: 800;
+  --font-weight-h4: 600;
+  --font-weight-body: 400;
+
+  /* Conservative font sizes */
+  --font-size-h1: 4.5rem;
+  --font-size-h2: 3rem;
+  --font-size-h3: 1.6rem;
+  --font-size-h4: 1.2rem;
+  --font-size-body: 1.25rem;
+  --font-size-small: 1rem;
+  --font-size-xs: 0.8rem;
+
+  /* Standard letter spacing - no tight tracking */
+  --letter-spacing-heading: 0;
+  --letter-spacing-uppercase: 0.08em;
+
+  /* Readable line heights */
+  --line-height-body: 1.6;
+  --line-height-heading: 1.15;
+
+  /* ========================================
+   * SPACING - Tighter for Content Density
+   * ======================================== */
+
+  --slide-padding: 50px 60px;
+  --slide-padding-md: 35px 45px;
+  --slide-padding-sm: 25px;
+  --card-padding: 1.5rem;
+  --section-gap: 1.5rem;
+  --element-margin: 1.25rem;
+  --content-max-width: 1300px;
+
+  /* ========================================
+   * BORDERS - Smaller Radius, Professional
+   * ======================================== */
+
+  --border-radius-xs: 2px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 10px;
+  --border-radius-full: 9999px;
+
+  /* ========================================
+   * EFFECTS - Subtle, No Blur
+   * ======================================== */
+
+  /* No glassmorphism - solid backgrounds */
+  --backdrop-blur: 0px;
+  --backdrop-blur-sm: 0px;
+
+  /* Subtle, professional shadows */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-text: 0 1px 10px rgba(0, 0, 0, 0.15);
+  --shadow-text-lg: 0 2px 15px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 8px rgba(255, 255, 255, 0.4);
+
+  /* ========================================
+   * TRANSITIONS - Fast, Muted
+   * ======================================== */
+
+  --transition-default: all 0.2s ease;
+  --transition-fast: all 0.15s ease;
+  --transition-slide: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ========================================
+   * COMPONENT-SPECIFIC
+   * ======================================== */
+
+  --card-min-width: 300px;
+  --flow-box-min-width: 160px;
+  --nav-button-size: 40px;
+}

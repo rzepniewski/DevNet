@@ -1,0 +1,7 @@
+{
+  "title": "Nexus AI - Product Launch",
+  "defaultTheme": "rose",
+  "defaultProfile": "creative",
+  "sections": ["intro", "vision", "features", "demo", "gallery", "closing"],
+  "output": { "dir": "output" }
+}

@@ -1,0 +1,56 @@
+<div class="slide" data-section="comparison" data-order="3">
+    <div class="slide-content">
+        <span class="tag">Protocol Deep Dive</span>
+        <h2>REST vs WebSocket vs SSE</h2>
+        <p>Choosing the right protocol for your real-time needs</p>
+
+        <div class="tabs-container" style="margin-top: 2rem;">
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="rest">REST</button>
+                <button class="tab-btn" data-tab="websocket">WebSocket</button>
+                <button class="tab-btn" data-tab="sse">SSE</button>
+            </div>
+            <div class="tabs-content">
+                <div class="tab-panel active" data-tab="rest">
+                    <h3>REST / HTTP Polling</h3>
+                    <ul>
+                        <li>Request-response model -- client must initiate every exchange</li>
+                        <li>Stateless by design -- no persistent connection between calls</li>
+                        <li>HTTP overhead on every request (headers, handshake)</li>
+                        <li>Polling intervals create artificial latency floor</li>
+                        <li>Simple to implement and widely supported</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p>Best for: CRUD operations, infrequent data updates, cacheable resources</p>
+                    </div>
+                </div>
+                <div class="tab-panel" data-tab="websocket">
+                    <h3>WebSocket</h3>
+                    <ul>
+                        <li>Full-duplex communication over a single TCP connection</li>
+                        <li>Persistent connection -- no repeated handshakes</li>
+                        <li>Ultra-low latency (2-10ms typical)</li>
+                        <li>Both client and server can push messages at any time</li>
+                        <li>Binary and text frame support</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p>Best for: Chat, gaming, live collaboration, real-time dashboards</p>
+                    </div>
+                </div>
+                <div class="tab-panel" data-tab="sse">
+                    <h3>Server-Sent Events</h3>
+                    <ul>
+                        <li>Server-push only -- unidirectional from server to client</li>
+                        <li>Built-in auto-reconnect with last-event-id tracking</li>
+                        <li>HTTP/2 compatible -- multiplexed over existing connections</li>
+                        <li>Simple text-based protocol with native browser support</li>
+                        <li>No special server infrastructure required</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p>Best for: News feeds, notifications, live scores, log streaming</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+services:
+    jupyter:
+      build: ./jupyter
+      container_name: ubuntu_jupyterlab
+      restart: always
+      ports:
+      - "8890:8888"
+      entrypoint:
+        jupyter lab --ip='0.0.0.0' --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
+      volumes: 
+      - ./jupyter/shared:/home/patryk
+
+  # docker-compose up

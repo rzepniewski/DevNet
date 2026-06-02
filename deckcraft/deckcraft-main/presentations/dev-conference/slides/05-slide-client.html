@@ -1,0 +1,24 @@
+<div class="slide" data-section="code" data-order="5">
+    <div class="slide-content">
+        <span class="tag">Client Side</span>
+        <h2>WebSocket Client</h2>
+        <p>Browser-native WebSocket API with event handlers</p>
+
+        <div class="code-block" style="margin-top: 2rem;">
+<code class="language-javascript">const ws = new WebSocket('ws://localhost:8080');
+
+ws.onopen = () => {
+    console.log('Connected to server');
+    ws.send(JSON.stringify({ type: 'join', user: 'Alice' }));
+};
+
+ws.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+    renderMessage(data);
+};
+
+ws.onclose = () => console.log('Disconnected');
+ws.onerror = (err) => console.error('WebSocket error:', err);</code>
+        </div>
+    </div>
+</div>

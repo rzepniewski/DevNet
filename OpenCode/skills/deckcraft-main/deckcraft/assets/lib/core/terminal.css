@@ -1,0 +1,205 @@
+/* ============================================
+   TERMINAL COMPONENT
+   Use: <div class="terminal">...</div>
+   A realistic terminal/console mockup with macOS-style window controls
+
+   Structure:
+   <div class="terminal">
+     <div class="terminal-header">
+       <span class="terminal-dot red"></span>
+       <span class="terminal-dot yellow"></span>
+       <span class="terminal-dot green"></span>
+       <span class="terminal-title">Terminal</span>
+     </div>
+     <div class="terminal-body">
+       <div class="terminal-line">
+         <span class="terminal-prompt">$</span>
+         <span class="terminal-command">npm install</span>
+       </div>
+       <div class="terminal-line">
+         <span class="terminal-output">Installing...</span>
+       </div>
+       <div class="terminal-line success">
+         <span class="terminal-output">Done!</span>
+       </div>
+     </div>
+   </div>
+   ============================================ */
+.terminal {
+    background: #1e1e1e;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--white-20);
+    box-shadow: var(--shadow-card);
+    margin: var(--element-margin) 0;
+}
+
+.terminal-header {
+    background: #323233;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.terminal-dot.red {
+    background: #ff5f56;
+    box-shadow: 0 0 4px rgba(255, 95, 86, 0.4);
+}
+
+.terminal-dot.yellow {
+    background: #ffbd2e;
+    box-shadow: 0 0 4px rgba(255, 189, 46, 0.4);
+}
+
+.terminal-dot.green {
+    background: #27c93f;
+    box-shadow: 0 0 4px rgba(39, 201, 63, 0.4);
+}
+
+.terminal-title {
+    margin-left: 0.75rem;
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-mono);
+    font-weight: 500;
+}
+
+.terminal-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    min-height: 80px;
+}
+
+.terminal-line {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.terminal-line:last-child {
+    margin-bottom: 0;
+}
+
+.terminal-prompt {
+    color: #27c93f;
+    font-weight: 600;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.terminal-command {
+    color: var(--white-90);
+}
+
+.terminal-output {
+    color: var(--white-60);
+}
+
+/* Success line styling */
+.terminal-line.success .terminal-output {
+    color: #27c93f;
+}
+
+/* Error line styling */
+.terminal-line.error .terminal-output {
+    color: #ff5f56;
+}
+
+/* Warning line styling */
+.terminal-line.warning .terminal-output {
+    color: #ffbd2e;
+}
+
+/* Info line styling */
+.terminal-line.info .terminal-output {
+    color: #06b6d4;
+}
+
+/* ============================================
+   TYPING ANIMATION
+   Use: <div class="typing-text" style="--characters: 25; --duration: 2s">
+          npm install deckcraft
+        </div>
+
+   CSS-only typing effect that reveals text character by character.
+
+   CSS Variables (set via inline style or parent):
+   - --characters: Number of characters in the text (required)
+   - --duration: Total typing duration (required)
+   - --cursor-blink: Cursor blink speed (default: 0.7s)
+
+   Modifiers:
+   - .typing-text.no-cursor  : Hide the blinking cursor
+   - .typing-text.loop       : Animation repeats infinitely
+   ============================================ */
+
+/* Typing animation keyframes */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-cursor {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.typing-text {
+    /* Default CSS variable values */
+    --cursor-blink: 0.7s;
+
+    /* Layout */
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+
+    /* Typography */
+    font-family: var(--font-mono);
+    color: var(--white-90);
+
+    /* Animation */
+    animation: typing var(--duration) steps(var(--characters), end) forwards;
+}
+
+/* Blinking cursor */
+.typing-text::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--white);
+    animation: blink-cursor var(--cursor-blink) step-end infinite;
+}
+
+/* No cursor modifier */
+.typing-text.no-cursor::after {
+    display: none;
+}
+
+/* Loop modifier - animation repeats infinitely */
+.typing-text.loop {
+    animation: typing var(--duration) steps(var(--characters), end) infinite;
+}

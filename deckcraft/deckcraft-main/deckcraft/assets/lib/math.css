@@ -1,0 +1,354 @@
+/**
+ * MATH.CSS - Mathematical Equation Rendering Styles
+ *
+ * CSS-based math display system for presentations.
+ * Uses HTML+CSS only (zero dependencies) for typeset-quality math.
+ *
+ * COMPONENTS:
+ *   - .math                  - Inline math expression
+ *   - .math-block            - Centered block math display
+ *   - .math-frac             - Fraction (numerator/denominator)
+ *   - .math-sqrt             - Square root
+ *   - .math-sum              - Summation with limits
+ *   - .math-prod             - Product with limits
+ *   - .math-matrix           - Matrix with brackets
+ *   - .math-paren            - Parenthesized group
+ *   - .math-bracket          - Bracketed group
+ *
+ * Use HTML entities for Greek letters and symbols:
+ *   &alpha; (α)  &beta; (β)  &gamma; (γ)  &delta; (δ)
+ *   &Sigma; (Σ)  &Pi; (Π)    &theta; (θ)  &lambda; (λ)
+ *   &mu; (μ)     &pi; (π)    &infin; (∞)  &int; (∫)
+ *   &part; (∂)   &nabla; (∇) &isin; (∈)   &forall; (∀)
+ */
+
+/* ============================================
+   INLINE MATH
+   ============================================ */
+.math {
+    font-family: 'Times New Roman', 'Georgia', 'Cambria Math', serif;
+    font-style: italic;
+    font-size: 1.1em;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.math sup,
+.math sub {
+    font-size: 0.75em;
+}
+
+.math sup {
+    vertical-align: super;
+}
+
+.math sub {
+    vertical-align: sub;
+}
+
+/* Operator styling within math (not italic) */
+.math .op {
+    font-style: normal;
+    padding: 0 0.15em;
+}
+
+/* ============================================
+   BLOCK MATH (centered display)
+   ============================================ */
+.math-block {
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+    font-family: 'Times New Roman', 'Georgia', 'Cambria Math', serif;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin: var(--element-margin, 1.5rem) 0;
+    background: var(--white-05, rgba(255, 255, 255, 0.05));
+    border-radius: var(--border-radius-md, 12px);
+    border: 1px solid var(--white-10, rgba(255, 255, 255, 0.1));
+    line-height: 1.6;
+}
+
+.math-block sup,
+.math-block sub {
+    font-size: 0.65em;
+}
+
+.math-block .op {
+    font-style: normal;
+    padding: 0 0.2em;
+}
+
+/* ============================================
+   FRACTIONS
+   ============================================ */
+.math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    font-family: 'Times New Roman', Georgia, 'Cambria Math', serif;
+    font-style: italic;
+    margin: 0 0.15em;
+}
+
+.math-frac .numerator {
+    border-bottom: 1px solid var(--white-60, rgba(255, 255, 255, 0.6));
+    padding: 0 0.3em 0.15em;
+    line-height: 1.2;
+}
+
+.math-frac .denominator {
+    padding: 0.15em 0.3em 0;
+    line-height: 1.2;
+}
+
+/* Nested fractions (smaller) */
+.math-frac .math-frac {
+    font-size: 0.85em;
+}
+
+/* ============================================
+   SQUARE ROOT
+   ============================================ */
+.math-sqrt {
+    display: inline-flex;
+    align-items: stretch;
+    font-family: 'Times New Roman', Georgia, 'Cambria Math', serif;
+    font-style: italic;
+    margin: 0 0.1em;
+}
+
+.math-sqrt::before {
+    content: '\221A';
+    font-size: 1.3em;
+    line-height: 1;
+    font-style: normal;
+    padding-right: 0.05em;
+}
+
+.math-sqrt .radicand {
+    border-top: 1px solid var(--white-60, rgba(255, 255, 255, 0.6));
+    padding: 0.1em 0.3em 0;
+}
+
+/* Nth root */
+.math-sqrt .root-index {
+    font-size: 0.6em;
+    vertical-align: super;
+    margin-right: -0.3em;
+}
+
+/* ============================================
+   SUMMATION & PRODUCT
+   ============================================ */
+.math-sum,
+.math-prod {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 0.2em;
+    font-family: 'Times New Roman', Georgia, 'Cambria Math', serif;
+}
+
+.math-sum .operator,
+.math-prod .operator {
+    font-size: 1.8em;
+    line-height: 1;
+    font-style: normal;
+}
+
+.math-sum .limit-upper,
+.math-sum .limit-lower,
+.math-prod .limit-upper,
+.math-prod .limit-lower {
+    font-size: 0.65em;
+    line-height: 1.2;
+    font-style: italic;
+}
+
+/* In block math, make operators larger */
+.math-block .math-sum .operator,
+.math-block .math-prod .operator {
+    font-size: 2.2em;
+}
+
+/* ============================================
+   INTEGRAL
+   ============================================ */
+.math-integral {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 0.2em;
+    font-family: 'Times New Roman', Georgia, 'Cambria Math', serif;
+}
+
+.math-integral .operator {
+    font-size: 2em;
+    line-height: 1;
+    font-style: normal;
+}
+
+.math-integral .limit-upper,
+.math-integral .limit-lower {
+    font-size: 0.65em;
+    line-height: 1.2;
+    font-style: italic;
+}
+
+/* ============================================
+   MATRIX
+   ============================================ */
+.math-matrix {
+    display: inline-flex;
+    flex-direction: column;
+    border-left: 2px solid var(--white-60, rgba(255, 255, 255, 0.6));
+    border-right: 2px solid var(--white-60, rgba(255, 255, 255, 0.6));
+    padding: 0.3em 0.5em;
+    margin: 0 0.3em;
+    vertical-align: middle;
+    font-family: 'Times New Roman', Georgia, 'Cambria Math', serif;
+    font-style: italic;
+}
+
+.matrix-row {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    padding: 0.2em 0;
+}
+
+.matrix-row span {
+    min-width: 1.5em;
+    text-align: center;
+}
+
+/* Determinant (vertical bars instead of brackets) */
+.math-matrix.determinant {
+    border-left-style: solid;
+    border-right-style: solid;
+    border-radius: 0;
+}
+
+/* Parenthesized matrix */
+.math-matrix.paren {
+    border-left: none;
+    border-right: none;
+    position: relative;
+}
+
+.math-matrix.paren::before,
+.math-matrix.paren::after {
+    font-size: 2.5em;
+    line-height: 0.7;
+    font-style: normal;
+    font-weight: 100;
+    vertical-align: middle;
+}
+
+.math-matrix.paren::before {
+    content: '(';
+}
+
+.math-matrix.paren::after {
+    content: ')';
+}
+
+/* ============================================
+   PARENTHESES & BRACKETS (auto-sizing)
+   ============================================ */
+.math-paren {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.math-paren::before,
+.math-paren::after {
+    font-style: normal;
+    font-size: 1.4em;
+    line-height: 1;
+    font-weight: 100;
+}
+
+.math-paren::before {
+    content: '(';
+    margin-right: 0.1em;
+}
+
+.math-paren::after {
+    content: ')';
+    margin-left: 0.1em;
+}
+
+.math-bracket {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.math-bracket::before,
+.math-bracket::after {
+    font-style: normal;
+    font-size: 1.4em;
+    line-height: 1;
+    font-weight: 100;
+}
+
+.math-bracket::before {
+    content: '[';
+    margin-right: 0.1em;
+}
+
+.math-bracket::after {
+    content: ']';
+    margin-left: 0.1em;
+}
+
+/* ============================================
+   LIGHT THEME OVERRIDES
+   ============================================ */
+.theme-light .math-frac .numerator,
+.theme-warm .math-frac .numerator,
+.theme-cool .math-frac .numerator {
+    border-bottom-color: var(--white-60);
+}
+
+.theme-light .math-sqrt .radicand,
+.theme-warm .math-sqrt .radicand,
+.theme-cool .math-sqrt .radicand {
+    border-top-color: var(--white-60);
+}
+
+.theme-light .math-matrix,
+.theme-warm .math-matrix,
+.theme-cool .math-matrix {
+    border-color: var(--white-60);
+}
+
+.theme-light .math-block,
+.theme-warm .math-block,
+.theme-cool .math-block {
+    background: var(--white-05);
+    border-color: var(--white-10);
+}
+
+/* ============================================
+   KATEX EQUATION PLACEHOLDER
+   When KaTeX is loaded, .katex-eq elements are
+   rendered via math.js. Style the container.
+   ============================================ */
+.katex-eq {
+    font-family: 'Times New Roman', Georgia, 'Cambria Math', serif;
+    font-style: italic;
+}
+
+.katex-eq.display {
+    display: block;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,309 @@
+/* ============================================
+   THEME ACCENT COLORS
+   Each theme defines 4 accent RGB values used
+   to tint cards, stats, flow-boxes, charts, etc.
+   Default (mesh) accents set in :root above.
+   ============================================ */
+
+.theme-purple {
+    --accent-1-rgb: 147, 51, 234;
+    --accent-2-rgb: 236, 72, 153;
+    --accent-3-rgb: 99, 102, 241;
+    --accent-4-rgb: 56, 189, 248;
+}
+
+.theme-cyan {
+    --accent-1-rgb: 6, 182, 212;
+    --accent-2-rgb: 20, 184, 166;
+    --accent-3-rgb: 56, 189, 248;
+    --accent-4-rgb: 16, 185, 129;
+}
+
+.theme-emerald {
+    --accent-1-rgb: 16, 185, 129;
+    --accent-2-rgb: 20, 184, 166;
+    --accent-3-rgb: 6, 182, 212;
+    --accent-4-rgb: 132, 204, 22;
+}
+
+.theme-orange {
+    --accent-1-rgb: 234, 88, 12;
+    --accent-2-rgb: 245, 158, 11;
+    --accent-3-rgb: 244, 63, 94;
+    --accent-4-rgb: 234, 179, 8;
+}
+
+.theme-rose {
+    --accent-1-rgb: 225, 29, 72;
+    --accent-2-rgb: 236, 72, 153;
+    --accent-3-rgb: 192, 38, 211;
+    --accent-4-rgb: 249, 115, 22;
+}
+
+.theme-blue {
+    --accent-1-rgb: 59, 130, 246;
+    --accent-2-rgb: 99, 102, 241;
+    --accent-3-rgb: 6, 182, 212;
+    --accent-4-rgb: 139, 92, 246;
+}
+
+.theme-dark {
+    --accent-1-rgb: 148, 163, 184;
+    --accent-2-rgb: 96, 165, 250;
+    --accent-3-rgb: 52, 211, 153;
+    --accent-4-rgb: 251, 191, 36;
+}
+
+.theme-cisco {
+    --accent-1-rgb: 4, 159, 217;
+    --accent-2-rgb: 0, 188, 235;
+    --accent-3-rgb: 232, 114, 42;
+    --accent-4-rgb: 217, 74, 140;
+}
+
+.theme-light {
+    --accent-1-rgb: 79, 70, 229;
+    --accent-2-rgb: 5, 150, 105;
+    --accent-3-rgb: 217, 119, 6;
+    --accent-4-rgb: 190, 18, 60;
+}
+
+.theme-warm {
+    --accent-1-rgb: 217, 119, 6;
+    --accent-2-rgb: 234, 88, 12;
+    --accent-3-rgb: 190, 18, 60;
+    --accent-4-rgb: 5, 150, 105;
+}
+
+.theme-cool {
+    --accent-1-rgb: 37, 99, 235;
+    --accent-2-rgb: 79, 70, 229;
+    --accent-3-rgb: 8, 145, 178;
+    --accent-4-rgb: 124, 58, 237;
+}
+
+/* ============================================
+   COMPONENT ACCENT TINTING
+   Cards, stats, flow-boxes, and icons cycle
+   through 4 accent colors per theme.
+   ============================================ */
+
+/* --- Cards Grid accent cycling --- */
+.cards-grid > :nth-child(4n+1) {
+    background: rgba(var(--accent-1-rgb), 0.1);
+    border-color: rgba(var(--accent-1-rgb), 0.22);
+    box-shadow: 0 4px 24px rgba(var(--accent-1-rgb), 0.06);
+}
+.cards-grid > :nth-child(4n+2) {
+    background: rgba(var(--accent-2-rgb), 0.1);
+    border-color: rgba(var(--accent-2-rgb), 0.22);
+    box-shadow: 0 4px 24px rgba(var(--accent-2-rgb), 0.06);
+}
+.cards-grid > :nth-child(4n+3) {
+    background: rgba(var(--accent-3-rgb), 0.1);
+    border-color: rgba(var(--accent-3-rgb), 0.22);
+    box-shadow: 0 4px 24px rgba(var(--accent-3-rgb), 0.06);
+}
+.cards-grid > :nth-child(4n) {
+    background: rgba(var(--accent-4-rgb), 0.1);
+    border-color: rgba(var(--accent-4-rgb), 0.22);
+    box-shadow: 0 4px 24px rgba(var(--accent-4-rgb), 0.06);
+}
+
+/* Card hover glow per accent */
+.cards-grid > :nth-child(4n+1):hover {
+    box-shadow: 0 8px 40px rgba(var(--accent-1-rgb), 0.15), 0 0 20px rgba(var(--accent-1-rgb), 0.08);
+}
+.cards-grid > :nth-child(4n+2):hover {
+    box-shadow: 0 8px 40px rgba(var(--accent-2-rgb), 0.15), 0 0 20px rgba(var(--accent-2-rgb), 0.08);
+}
+.cards-grid > :nth-child(4n+3):hover {
+    box-shadow: 0 8px 40px rgba(var(--accent-3-rgb), 0.15), 0 0 20px rgba(var(--accent-3-rgb), 0.08);
+}
+.cards-grid > :nth-child(4n):hover {
+    box-shadow: 0 8px 40px rgba(var(--accent-4-rgb), 0.15), 0 0 20px rgba(var(--accent-4-rgb), 0.08);
+}
+
+/* --- Stats Grid accent cycling --- */
+.stats-grid > :nth-child(4n+1) {
+    background: rgba(var(--accent-1-rgb), 0.1);
+    border-color: rgba(var(--accent-1-rgb), 0.22);
+}
+.stats-grid > :nth-child(4n+1) .stat-value {
+    background: linear-gradient(135deg, var(--white) 0%, rgba(var(--accent-1-rgb), 0.85) 100%);
+    -webkit-background-clip: text; background-clip: text;
+}
+.stats-grid > :nth-child(4n+2) {
+    background: rgba(var(--accent-2-rgb), 0.1);
+    border-color: rgba(var(--accent-2-rgb), 0.22);
+}
+.stats-grid > :nth-child(4n+2) .stat-value {
+    background: linear-gradient(135deg, var(--white) 0%, rgba(var(--accent-2-rgb), 0.85) 100%);
+    -webkit-background-clip: text; background-clip: text;
+}
+.stats-grid > :nth-child(4n+3) {
+    background: rgba(var(--accent-3-rgb), 0.1);
+    border-color: rgba(var(--accent-3-rgb), 0.22);
+}
+.stats-grid > :nth-child(4n+3) .stat-value {
+    background: linear-gradient(135deg, var(--white) 0%, rgba(var(--accent-3-rgb), 0.85) 100%);
+    -webkit-background-clip: text; background-clip: text;
+}
+.stats-grid > :nth-child(4n) {
+    background: rgba(var(--accent-4-rgb), 0.1);
+    border-color: rgba(var(--accent-4-rgb), 0.22);
+}
+.stats-grid > :nth-child(4n) .stat-value {
+    background: linear-gradient(135deg, var(--white) 0%, rgba(var(--accent-4-rgb), 0.85) 100%);
+    -webkit-background-clip: text; background-clip: text;
+}
+
+/* --- Icon Grid accent cycling (vivid colored backgrounds) --- */
+.icon-grid > :nth-child(4n+1) .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.85) 0%, rgba(var(--accent-1-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-1-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-1-rgb), 0.3);
+    color: #fff;
+}
+.icon-grid > :nth-child(4n+2) .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-2-rgb), 0.85) 0%, rgba(var(--accent-2-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-2-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-2-rgb), 0.3);
+    color: #fff;
+}
+.icon-grid > :nth-child(4n+3) .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-3-rgb), 0.85) 0%, rgba(var(--accent-3-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-3-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-3-rgb), 0.3);
+    color: #fff;
+}
+.icon-grid > :nth-child(4n) .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-4-rgb), 0.85) 0%, rgba(var(--accent-4-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-4-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-4-rgb), 0.3);
+    color: #fff;
+}
+
+/* Icon hover glow per accent */
+.icon-grid > :nth-child(4n+1):hover .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.95) 0%, rgba(var(--accent-1-rgb), 0.7) 100%);
+    box-shadow: 0 8px 32px rgba(var(--accent-1-rgb), 0.4), 0 0 16px rgba(var(--accent-1-rgb), 0.2);
+}
+.icon-grid > :nth-child(4n+2):hover .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-2-rgb), 0.95) 0%, rgba(var(--accent-2-rgb), 0.7) 100%);
+    box-shadow: 0 8px 32px rgba(var(--accent-2-rgb), 0.4), 0 0 16px rgba(var(--accent-2-rgb), 0.2);
+}
+.icon-grid > :nth-child(4n+3):hover .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-3-rgb), 0.95) 0%, rgba(var(--accent-3-rgb), 0.7) 100%);
+    box-shadow: 0 8px 32px rgba(var(--accent-3-rgb), 0.4), 0 0 16px rgba(var(--accent-3-rgb), 0.2);
+}
+.icon-grid > :nth-child(4n):hover .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-4-rgb), 0.95) 0%, rgba(var(--accent-4-rgb), 0.7) 100%);
+    box-shadow: 0 8px 32px rgba(var(--accent-4-rgb), 0.4), 0 0 16px rgba(var(--accent-4-rgb), 0.2);
+}
+
+/* Card icon-wrapper inherits parent card accent (vivid) */
+.cards-grid > :nth-child(4n+1) .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.85) 0%, rgba(var(--accent-1-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-1-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-1-rgb), 0.3);
+    color: #fff;
+}
+.cards-grid > :nth-child(4n+2) .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-2-rgb), 0.85) 0%, rgba(var(--accent-2-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-2-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-2-rgb), 0.3);
+    color: #fff;
+}
+.cards-grid > :nth-child(4n+3) .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-3-rgb), 0.85) 0%, rgba(var(--accent-3-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-3-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-3-rgb), 0.3);
+    color: #fff;
+}
+.cards-grid > :nth-child(4n) .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-4-rgb), 0.85) 0%, rgba(var(--accent-4-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-4-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-4-rgb), 0.3);
+    color: #fff;
+}
+
+/* --- Flow box accents --- */
+.flow-box {
+    border-color: rgba(var(--accent-1-rgb), 0.3);
+    background: rgba(var(--accent-1-rgb), 0.08);
+}
+.flow-box.highlight {
+    border-color: rgba(var(--accent-3-rgb), 0.5);
+    background: rgba(var(--accent-3-rgb), 0.12);
+    box-shadow: 0 0 25px rgba(var(--accent-3-rgb), 0.15);
+}
+
+/* --- Highlight box accent --- */
+.highlight-box {
+    border-left-color: rgb(var(--accent-2-rgb));
+    background: rgba(var(--accent-2-rgb), 0.06);
+}
+
+/* --- Diagram container accent --- */
+.diagram {
+    border-color: rgba(var(--accent-4-rgb), 0.18);
+    background: rgba(var(--accent-4-rgb), 0.05);
+}
+
+/* ============================================
+   SLIDE GRADIENT GLOW PER THEME
+   Each theme gets a unique glow combination
+   that appears on the active slide edges.
+   ============================================ */
+.theme-mesh .slide  { --slide-glow-color-1: 124, 58, 237;  --slide-glow-color-2: 6, 182, 212;   --slide-glow-color-3: 16, 185, 129; }
+.theme-purple .slide { --slide-glow-color-1: 147, 51, 234; --slide-glow-color-2: 236, 72, 153;  --slide-glow-color-3: 99, 102, 241; }
+.theme-cyan .slide   { --slide-glow-color-1: 6, 182, 212;  --slide-glow-color-2: 20, 184, 166;  --slide-glow-color-3: 56, 189, 248; }
+.theme-emerald .slide { --slide-glow-color-1: 16, 185, 129; --slide-glow-color-2: 6, 182, 212;  --slide-glow-color-3: 20, 184, 166; }
+.theme-orange .slide { --slide-glow-color-1: 234, 88, 12;  --slide-glow-color-2: 245, 158, 11;  --slide-glow-color-3: 244, 63, 94; }
+.theme-rose .slide   { --slide-glow-color-1: 225, 29, 72;  --slide-glow-color-2: 236, 72, 153;  --slide-glow-color-3: 192, 38, 211; }
+.theme-blue .slide   { --slide-glow-color-1: 59, 130, 246; --slide-glow-color-2: 99, 102, 241;  --slide-glow-color-3: 6, 182, 212; }
+.theme-dark .slide   { --slide-glow-color-1: 148, 163, 184; --slide-glow-color-2: 96, 165, 250; --slide-glow-color-3: 52, 211, 153; }
+.theme-cisco .slide  { --slide-glow-color-1: 4, 159, 217;  --slide-glow-color-2: 232, 114, 42;  --slide-glow-color-3: 217, 74, 140; }
+.theme-light .slide  { --slide-glow-color-1: 79, 70, 229;  --slide-glow-color-2: 5, 150, 105;   --slide-glow-color-3: 217, 119, 6; }
+.theme-warm .slide   { --slide-glow-color-1: 217, 119, 6;  --slide-glow-color-2: 234, 88, 12;   --slide-glow-color-3: 190, 18, 60; }
+.theme-cool .slide   { --slide-glow-color-1: 37, 99, 235;  --slide-glow-color-2: 79, 70, 229;   --slide-glow-color-3: 8, 145, 178; }
+
+/* ============================================
+   PER-SLIDE GLOW VARIATION
+   Slides cycle through accent color combinations
+   so each slide gets a unique glow edge effect.
+   ============================================ */
+.slide:nth-child(4n+2) {
+    --slide-glow-color-1: var(--accent-2-rgb);
+    --slide-glow-color-2: var(--accent-3-rgb);
+    --slide-glow-color-3: var(--accent-4-rgb);
+}
+.slide:nth-child(4n+3) {
+    --slide-glow-color-1: var(--accent-3-rgb);
+    --slide-glow-color-2: var(--accent-4-rgb);
+    --slide-glow-color-3: var(--accent-1-rgb);
+}
+.slide:nth-child(4n) {
+    --slide-glow-color-1: var(--accent-4-rgb);
+    --slide-glow-color-2: var(--accent-1-rgb);
+    --slide-glow-color-3: var(--accent-2-rgb);
+}
+
+/* --- Per-slide tag dot color variation --- */
+.slide:nth-child(4n+1) .tag::before {
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 1), rgba(var(--accent-2-rgb), 0.8));
+    box-shadow: 0 0 8px rgba(var(--accent-1-rgb), 0.5);
+}
+.slide:nth-child(4n+2) .tag::before {
+    background: linear-gradient(135deg, rgba(var(--accent-2-rgb), 1), rgba(var(--accent-3-rgb), 0.8));
+    box-shadow: 0 0 8px rgba(var(--accent-2-rgb), 0.5);
+}
+.slide:nth-child(4n+3) .tag::before {
+    background: linear-gradient(135deg, rgba(var(--accent-3-rgb), 1), rgba(var(--accent-4-rgb), 0.8));
+    box-shadow: 0 0 8px rgba(var(--accent-3-rgb), 0.5);
+}
+.slide:nth-child(4n) .tag::before {
+    background: linear-gradient(135deg, rgba(var(--accent-4-rgb), 1), rgba(var(--accent-1-rgb), 0.8));
+    box-shadow: 0 0 8px rgba(var(--accent-4-rgb), 0.5);
+}

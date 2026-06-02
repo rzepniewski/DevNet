@@ -1,0 +1,17 @@
+#routinator
+#
+#https://github.com/NLnetLabs/routinator/tree/main
+#https://rpki-validator.ripe.net/ui/
+#https://networklessons.com/bgp/bgp-prefix-origin-as-validation-with-rpki
+#https://www.youtube.com/watch?v=9E94Yd2Unhk
+
+# https://routinator.docs.nlnetlabs.nl/en/stable/installation.html
+
+docker build -t rpki:latest .
+
+docker run -d --restart=unless-stopped --name RPKI -p 3323:3323 -p 8323:8323 -p 9556:9556 rpki:latest
+
+docker run -d --restart=unless-stopped --name RPKI \
+    -p 3323:3323 \
+    -p 8323:8323 \
+    nlnetlabs/routinator

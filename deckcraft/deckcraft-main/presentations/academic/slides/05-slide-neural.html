@@ -1,0 +1,70 @@
+<div class="slide" data-section="algorithms" data-order="5">
+    <div class="slide-content">
+        <span class="tag">Algorithms</span>
+        <h2>Neural Networks</h2>
+        <p>Universal function approximators inspired by biological neural systems.</p>
+
+        <div class="diagram">
+            <div class="flow-diagram">
+                <div class="flow-box">
+                    <h4>Input Layer</h4>
+                    <p>Features x₁...xₙ</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-box">
+                    <h4>Hidden Layer 1</h4>
+                    <p>ReLU activation</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-box">
+                    <h4>Hidden Layer 2</h4>
+                    <p>ReLU activation</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-box highlight">
+                    <h4>Output Layer</h4>
+                    <p>Softmax/Linear</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Architecture</th>
+                        <th>Best For</th>
+                        <th>Key Innovation</th>
+                        <th>Parameters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Feedforward (MLP)</td>
+                        <td>Tabular data</td>
+                        <td>Backpropagation</td>
+                        <td>10K - 1M</td>
+                    </tr>
+                    <tr>
+                        <td>Convolutional (CNN)</td>
+                        <td>Images, spatial data</td>
+                        <td>Weight sharing</td>
+                        <td>1M - 100M</td>
+                    </tr>
+                    <tr style="background: var(--white-10);">
+                        <td><strong>Transformer</strong></td>
+                        <td>Sequences, language</td>
+                        <td>Self-attention</td>
+                        <td>100M - 1T</td>
+                    </tr>
+                    <tr>
+                        <td>Recurrent (RNN/LSTM)</td>
+                        <td>Time series</td>
+                        <td>Memory cells</td>
+                        <td>100K - 10M</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

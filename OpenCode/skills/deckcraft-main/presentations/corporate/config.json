@@ -1,0 +1,13 @@
+{
+  "title": "Q4 2024 Strategic Review",
+  "defaultTheme": "blue",
+  "defaultProfile": "corporate",
+  "sections": ["intro", "performance", "strategy", "roadmap", "summary"],
+  "output": {
+    "dir": "output",
+    "filename": "presentation.html"
+  },
+  "assets": {
+    "inlineThreshold": 10240
+  }
+}

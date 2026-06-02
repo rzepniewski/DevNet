@@ -1,0 +1,109 @@
+/* ============================================
+   QUOTE COMPONENT
+   Use: <div class="quote-block">...</div>
+   For testimonials, citations, and key statements
+
+   Structure:
+   <div class="quote-block">
+     <img class="quote-avatar" src="avatar.jpg" alt="Author">
+     <div class="quote-text">
+       "The quote text goes here."
+     </div>
+     <div class="quote-attribution">
+       <span class="quote-author">Author Name</span>
+       <span class="quote-title">Title, Company</span>
+     </div>
+   </div>
+   ============================================ */
+.quote-block {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Decorative quotation mark */
+.quote-block::before {
+    content: '“';
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8rem;
+    font-family: Georgia, serif;
+    color: var(--white-10);
+    line-height: 1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* The quote text itself */
+.quote-text {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+    text-shadow: var(--shadow-text);
+    z-index: 1;
+}
+
+/* Attribution container */
+.quote-attribution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Author name */
+.quote-author {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Title and company */
+.quote-title {
+    font-size: 1rem;
+    color: var(--white-60);
+    font-weight: 400;
+}
+
+/* Optional avatar/photo */
+.quote-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-full);
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    border: 3px solid var(--white-30);
+    box-shadow: 0 4px 20px var(--black-30);
+    display: block;
+}
+
+/* Responsive adjustments for quote */
+@media (max-width: 768px) {
+    .quote-block {
+        padding: 2rem 1rem;
+    }
+
+    .quote-block::before {
+        font-size: 5rem;
+        top: -0.5rem;
+    }
+
+    .quote-text {
+        font-size: 1.4rem;
+    }
+
+    .quote-avatar {
+        width: 64px;
+        height: 64px;
+    }
+}

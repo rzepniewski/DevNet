@@ -1,0 +1,239 @@
+/* ============================================
+   TABLES
+   Use: <div class="table-container"><table>...</table></div>
+   ============================================ */
+.table-container {
+    overflow-x: auto;
+    margin: var(--element-margin) 0;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--white-20);
+    background: var(--white-05);
+    backdrop-filter: blur(var(--backdrop-blur-sm));
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-small);
+}
+
+th, td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--white-10);
+}
+
+th {
+    background: var(--white-10);
+    color: var(--white);
+    font-weight: var(--font-weight-h4);
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.05em;
+}
+
+td {
+    color: var(--white-80);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: var(--white-05);
+}
+
+/* ============================================
+   TIMELINE COMPONENT
+   Use: <div class="timeline">
+          <div class="timeline-item completed">...</div>
+          <div class="timeline-item active">...</div>
+          <div class="timeline-item">...</div>
+        </div>
+   Vertical: <div class="timeline vertical">...</div>
+   ============================================ */
+
+/* Timeline Container - Horizontal (default) */
+.timeline {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    padding: var(--card-padding) 0;
+    gap: var(--element-margin);
+}
+
+/* Horizontal connecting line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: calc(var(--card-padding) + 12px);
+    left: 24px;
+    right: 24px;
+    height: 2px;
+    background: var(--white-20);
+    z-index: 0;
+}
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    min-width: 120px;
+}
+
+/* Timeline Marker */
+.timeline-marker {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--border-radius-full);
+    background: var(--white-10);
+    border: 2px solid var(--white-30);
+    margin-bottom: 1rem;
+    transition: var(--transition-default);
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Marker States */
+.timeline-item.completed .timeline-marker {
+    background: var(--white);
+    border-color: var(--white);
+}
+
+.timeline-item.active .timeline-marker {
+    background: var(--white-20);
+    border-color: var(--white);
+    box-shadow: var(--shadow-glow);
+}
+
+.timeline-item.active .timeline-marker::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: var(--border-radius-full);
+    background: var(--white);
+}
+
+/* Timeline Content */
+.timeline-content {
+    max-width: 150px;
+}
+
+.timeline-content h4 {
+    font-size: var(--font-size-small);
+    color: var(--white-60);
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.timeline-content p {
+    font-size: var(--font-size-xs);
+    color: var(--white-40);
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* Content States */
+.timeline-item.completed .timeline-content h4,
+.timeline-item.active .timeline-content h4 {
+    color: var(--white);
+}
+
+.timeline-item.completed .timeline-content p,
+.timeline-item.active .timeline-content p {
+    color: var(--white-60);
+}
+
+/* ============================================
+   TIMELINE VERTICAL VARIANT
+   ============================================ */
+.timeline.vertical {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--element-margin) 0;
+}
+
+/* Vertical connecting line */
+.timeline.vertical::before {
+    top: 24px;
+    bottom: 24px;
+    left: 11px;
+    right: auto;
+    width: 2px;
+    height: auto;
+}
+
+.timeline.vertical .timeline-item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    min-width: auto;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.timeline.vertical .timeline-marker {
+    margin-bottom: 0;
+    margin-right: 1.25rem;
+}
+
+.timeline.vertical .timeline-content {
+    max-width: none;
+    flex: 1;
+}
+
+.timeline.vertical .timeline-content h4 {
+    margin-bottom: 0.25rem;
+}
+
+/* ============================================
+   TIMELINE RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    /* Convert horizontal to vertical on mobile */
+    .timeline:not(.vertical) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline:not(.vertical)::before {
+        top: 24px;
+        bottom: 24px;
+        left: 11px;
+        right: auto;
+        width: 2px;
+        height: auto;
+    }
+
+    .timeline:not(.vertical) .timeline-item {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        min-width: auto;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .timeline:not(.vertical) .timeline-marker {
+        margin-bottom: 0;
+        margin-right: 1.25rem;
+    }
+
+    .timeline:not(.vertical) .timeline-content {
+        max-width: none;
+        flex: 1;
+    }
+}

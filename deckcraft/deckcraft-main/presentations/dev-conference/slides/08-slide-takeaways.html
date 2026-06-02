@@ -1,0 +1,18 @@
+<div class="slide" data-section="wrapup" data-order="8">
+    <div class="slide-content">
+        <span class="tag">Summary</span>
+        <h2>Key Takeaways</h2>
+        <p>What to remember when building real-time APIs</p>
+
+        <div style="margin-top: 2rem;">
+            <p class="fragment highlight-current">Use WebSockets for bidirectional real-time communication</p>
+            <p class="fragment highlight-current">SSE is simpler for server-push only scenarios</p>
+            <p class="fragment highlight-current">Always implement reconnection and heartbeat logic</p>
+            <p class="fragment highlight-current">Scale horizontally with Redis PubSub</p>
+        </div>
+
+        <div class="highlight-box fragment fade-up" style="margin-top: 2rem;">
+            <p>Start with SSE if you only need server-push. Graduate to WebSockets when you need full-duplex communication.</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+{
+  "title": "Building Real-Time APIs with WebSockets",
+  "defaultTheme": "cyan",
+  "defaultProfile": "tech",
+  "sections": ["intro", "concepts", "code", "comparison", "demo", "architecture", "wrapup"],
+  "output": { "dir": "output" }
+}

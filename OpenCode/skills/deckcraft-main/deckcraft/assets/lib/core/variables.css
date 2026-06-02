@@ -1,0 +1,97 @@
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+:root {
+    /* Color Variables (theme-controlled) */
+    --white: #ffffff;
+    --white-90: rgba(255, 255, 255, 0.9);
+    --white-80: rgba(255, 255, 255, 0.8);
+    --white-60: rgba(255, 255, 255, 0.6);
+    --white-40: rgba(255, 255, 255, 0.4);
+    --white-30: rgba(255, 255, 255, 0.3);
+    --white-20: rgba(255, 255, 255, 0.2);
+    --white-10: rgba(255, 255, 255, 0.1);
+    --white-05: rgba(255, 255, 255, 0.05);
+    --black: #000000;
+    --black-50: rgba(0, 0, 0, 0.5);
+    --black-30: rgba(0, 0, 0, 0.3);
+    --black-20: rgba(0, 0, 0, 0.2);
+
+    /* Theme Accent Colors (RGB values for component tinting) */
+    --accent-1-rgb: 124, 58, 237;   /* purple */
+    --accent-2-rgb: 6, 182, 212;    /* cyan */
+    --accent-3-rgb: 16, 185, 129;   /* emerald */
+    --accent-4-rgb: 234, 88, 12;    /* orange */
+
+    /* ==========================================
+       STYLE PROFILE VARIABLES
+       These can be overridden by profile classes
+       (e.g., .profile-tech, .profile-corporate)
+       ========================================== */
+
+    /* Typography - Font Families */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Typography - Font Sizes */
+    --font-size-h1: 5rem;
+    --font-size-h2: 3.5rem;
+    --font-size-h3: 1.8rem;
+    --font-size-h4: 1.3rem;
+    --font-size-body: 1.35rem;
+    --font-size-small: 1rem;
+    --font-size-xs: 0.85rem;
+
+    /* Typography - Font Weights */
+    --font-weight-heading: 800;
+    --font-weight-h1: 900;
+    --font-weight-h4: 700;
+    --font-weight-body: 400;
+
+    /* Typography - Line Height & Spacing */
+    --line-height-body: 1.7;
+    --line-height-heading: 1.1;
+    --letter-spacing-heading: -0.02em;
+    --letter-spacing-uppercase: 0.1em;
+
+    /* Spacing */
+    --slide-padding: 48px 64px;
+    --slide-padding-md: 36px 44px;
+    --slide-padding-sm: 24px;
+    --card-padding: 2.25rem;
+    --section-gap: 2.5rem;
+    --content-max-width: 1680px;
+    --element-margin: 1.5rem;
+    --slide-content-gap: 1rem;
+
+    /* Borders & Shapes */
+    --border-radius-xs: 4px;
+    --border-radius-sm: 6px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 20px;
+    --border-radius-full: 9999px;
+
+    /* Effects */
+    --backdrop-blur: 20px;
+    --backdrop-blur-sm: 10px;
+    --shadow-card: 0 20px 40px var(--black-30);
+    --shadow-text: 0 2px 20px var(--black-30);
+    --shadow-text-lg: 0 4px 30px var(--black-50);
+    --shadow-glow: 0 0 15px var(--white-60);
+    --transition-default: all 0.3s ease;
+    --transition-fast: all 0.2s ease;
+    --transition-slide: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Component-specific */
+    --card-min-width: 280px;
+    --flow-box-min-width: 180px;
+    --nav-button-size: 44px;
+
+    /* Slide glow */
+    --slide-glow-opacity: 0;
+    --slide-glow-color-1: var(--accent-1-rgb);
+    --slide-glow-color-2: var(--accent-2-rgb);
+    --slide-glow-color-3: var(--accent-3-rgb);
+}

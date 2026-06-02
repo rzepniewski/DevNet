@@ -1,0 +1,21 @@
+W kontenerze ubuntu:
+
+unminimize
+apt install net-tools
+
+#apt install docker.io 
+#apt install docker-compose -y
+#dind
+
+adduser patryk
+usermod -aG sudo patryk
+
+
+ssh -p 2222 patryk@127.0.0.1
+
+git clone https://wwwin-github.cisco.com/sargandh/iosxr_telemetry_stack_in_docker.git
+
+
+mkdir lab_stacks && cd lab_stacks
+wget https://gitlab.com/dchidell/lab-stacks/-/raw/main/infra_dind_manager/docker-compose.yml
+sudo docker-compose pull

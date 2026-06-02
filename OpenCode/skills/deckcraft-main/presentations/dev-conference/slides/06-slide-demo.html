@@ -1,0 +1,37 @@
+<div class="slide" data-section="demo" data-order="6">
+    <div class="slide-content">
+        <span class="tag">Live Demo</span>
+        <h2>Server in Action</h2>
+        <p>Watching real-time message broadcast across connected clients</p>
+
+        <div class="terminal" style="margin-top: 2rem;">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">ws-server</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-command">node server.js</span>
+                </div>
+                <div class="terminal-line success">
+                    <span class="terminal-output">WebSocket server running on port 8080</span>
+                </div>
+                <div class="terminal-line info">
+                    <span class="terminal-output">Client connected: 192.168.1.10</span>
+                </div>
+                <div class="terminal-line info">
+                    <span class="terminal-output">Client connected: 192.168.1.11</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-output">Message broadcast: {"type":"chat","user":"Alice","text":"Hello!"}</span>
+                </div>
+                <div class="terminal-line success">
+                    <span class="terminal-output">2 clients received message</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

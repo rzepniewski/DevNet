@@ -1,0 +1,18 @@
+#
+# build image
+# docker build -t python_jupiter_custom .
+
+# run container
+# docker run -ti --name python-jupyter -p 8888:8888 --mount src="/Users/przepnie/OneDrive - Cisco/DevNet/docker/images/Python-Jupyter/shared",target=/home/patryk,type=bind python_jupiter_custom
+
+# to run inside the container
+# jupyter lab --ip='0.0.0.0' --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
+
+
+# to create new image from container
+# docker commit python-jupyter python-jupyter-new
+
+# we can just run the contatiner in the background
+# docker run -dit --name python-jupyter-new -p 8888:8888 --mount src="/Users/przepnie/OneDrive - Cisco/DevNet/docker/images/Python-Jupyter/shared",target=/home/patryk,type=bind python-jupyter
+# in one line: biuld image & run container
+# docker build -t python_jupiter_custom . && docker run --rm --name python-jupyter -p 8888:8888 --mount src="/Users/przepnie/OneDrive - Cisco/DevNet/docker/images/Python-Jupyter/shared",target=/home/patryk,type=bind python_jupiter_custom

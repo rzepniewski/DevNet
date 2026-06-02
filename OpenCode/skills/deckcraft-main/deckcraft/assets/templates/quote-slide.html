@@ -1,0 +1,66 @@
+<!-- QUOTE SLIDE TEMPLATE
+     For testimonials, citations, key statements
+     Replace content in {BRACES} with your values
+
+     Usage:
+     - Copy this entire slide into your presentation
+     - Replace {SECTION} with your section name (e.g., "testimonials")
+     - Replace {ORDER} with slide number in section (e.g., "1")
+     - Update the quote text, author, and title
+     - Avatar is optional - remove the img tag if not needed
+
+     CSS Classes:
+     - .quote-block      : Main container with decorative quotation mark
+     - .quote-avatar     : Optional circular avatar image (80px)
+     - .quote-text       : Large italic quote text (centered)
+     - .quote-attribution: Container for author info
+     - .quote-author     : Author name (uppercase, bold)
+     - .quote-title      : Author title and company
+-->
+
+<!-- Basic Quote Slide -->
+<div class="slide" data-section="{SECTION}" data-order="{ORDER}">
+    <div class="slide-content" style="text-align: center;">
+        <div class="quote-block">
+            <div class="quote-text">
+                "{The quote text goes here. Make it impactful and memorable.}"
+            </div>
+            <div class="quote-attribution">
+                <span class="quote-author">{Author Name}</span>
+                <span class="quote-title">{Title, Company}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quote Slide with Avatar -->
+<div class="slide" data-section="{SECTION}" data-order="{ORDER}">
+    <div class="slide-content" style="text-align: center;">
+        <div class="quote-block">
+            <img class="quote-avatar" src="{avatar.jpg}" alt="{Author Name}">
+            <div class="quote-text">
+                "{The quote text goes here. Make it impactful and memorable.}"
+            </div>
+            <div class="quote-attribution">
+                <span class="quote-author">{Author Name}</span>
+                <span class="quote-title">{Title, Company}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quote Slide with Section Tag -->
+<div class="slide" data-section="{SECTION}" data-order="{ORDER}">
+    <div class="slide-content" style="text-align: center;">
+        <span class="tag">{Testimonial}</span>
+        <div class="quote-block">
+            <div class="quote-text">
+                "{The quote text goes here. Make it impactful and memorable.}"
+            </div>
+            <div class="quote-attribution">
+                <span class="quote-author">{Author Name}</span>
+                <span class="quote-title">{Title, Company}</span>
+            </div>
+        </div>
+    </div>
+</div>

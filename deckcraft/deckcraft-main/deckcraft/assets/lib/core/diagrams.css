@@ -1,0 +1,324 @@
+/* ============================================
+   DIAGRAMS & FLOW
+   Use: <div class="diagram"><div class="flow-diagram">...</div></div>
+   ============================================ */
+.diagram {
+    background: var(--white-10);
+    backdrop-filter: blur(var(--backdrop-blur));
+    border-radius: var(--border-radius-xl);
+    padding: 2.5rem;
+    border: 1px solid var(--white-20);
+    margin: var(--section-gap) 0;
+}
+
+.flow-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--element-margin);
+    flex-wrap: wrap;
+}
+
+.flow-box {
+    background: var(--white-10);
+    border: 2px solid rgba(var(--accent-1-rgb), 0.2);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    min-width: var(--flow-box-min-width);
+    transition: var(--transition-default);
+    backdrop-filter: blur(var(--backdrop-blur-sm));
+}
+
+.flow-box:hover {
+    background: var(--white-20);
+    transform: scale(1.05);
+    border-color: rgba(var(--accent-1-rgb), 0.4);
+    box-shadow: 0 4px 20px rgba(var(--accent-1-rgb), 0.15);
+}
+
+.flow-box.highlight {
+    border-color: rgba(var(--accent-2-rgb), 0.6);
+    background: rgba(var(--accent-2-rgb), 0.12);
+    box-shadow: 0 0 30px rgba(var(--accent-2-rgb), 0.15), 0 4px 20px rgba(var(--accent-2-rgb), 0.1);
+}
+
+.flow-box p {
+    margin-bottom: 0;
+    font-size: var(--font-size-small);
+}
+
+.flow-arrow {
+    font-size: 2rem;
+    font-weight: 300;
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.8), rgba(var(--accent-2-rgb), 0.6));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 4px rgba(var(--accent-1-rgb), 0.3));
+}
+
+/* ============================================
+   HIGHLIGHT BOX
+   Use: <div class="highlight-box"><p>Important text</p></div>
+   ============================================ */
+.highlight-box {
+    background: var(--white-10);
+    border-left: 4px solid transparent;
+    border-image: linear-gradient(180deg, rgba(var(--accent-1-rgb), 1), rgba(var(--accent-2-rgb), 0.8), rgba(var(--accent-3-rgb), 0.6)) 1;
+    padding: var(--element-margin) var(--card-padding);
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+    margin: var(--element-margin) 0;
+    backdrop-filter: blur(var(--backdrop-blur-sm));
+}
+
+.highlight-box p {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+}
+
+/* ============================================
+   ICON GRID COMPONENT
+   Use: <div class="icon-grid">
+          <div class="icon-item">
+            <div class="icon-wrapper"><svg>...</svg></div>
+            <span class="icon-label">Label</span>
+          </div>
+        </div>
+   Variants: .icon-grid.compact for smaller icons
+   ============================================ */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--section-gap);
+    margin: var(--section-gap) 0;
+    justify-items: center;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: var(--element-margin);
+    border-radius: var(--border-radius-lg);
+    transition: var(--transition-default);
+    cursor: default;
+}
+
+.icon-item:hover {
+    background: var(--white-10);
+    transform: translateY(-4px);
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.15) 0%, rgba(var(--accent-2-rgb), 0.08) 100%);
+    border-radius: var(--border-radius-md);
+    border: 1px solid rgba(var(--accent-1-rgb), 0.2);
+    transition: var(--transition-default);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(var(--backdrop-blur-sm));
+    box-shadow: 0 4px 16px rgba(var(--accent-1-rgb), 0.08);
+    color: var(--white-80);
+}
+
+.icon-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.icon-item:hover .icon-wrapper {
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.25) 0%, rgba(var(--accent-2-rgb), 0.15) 100%);
+    border-color: rgba(var(--accent-1-rgb), 0.4);
+    box-shadow: 0 8px 32px rgba(var(--accent-1-rgb), 0.2), 0 0 20px rgba(var(--accent-2-rgb), 0.1);
+    color: var(--white);
+}
+
+.icon-wrapper svg {
+    width: 40px;
+    height: 40px;
+    transition: var(--transition-default);
+}
+
+.icon-wrapper svg[fill="currentColor"] {
+    fill: currentColor;
+}
+
+.icon-item:hover .icon-wrapper svg {
+    transform: scale(1.1);
+}
+
+.icon-label {
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    color: var(--white-80);
+    text-align: center;
+    transition: var(--transition-default);
+}
+
+.icon-item:hover .icon-label {
+    color: var(--white);
+}
+
+/* Compact variant - smaller icons */
+.icon-grid.compact {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--element-margin);
+}
+
+.icon-grid.compact .icon-item {
+    padding: 1rem;
+    gap: 0.75rem;
+}
+
+.icon-grid.compact .icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--border-radius-sm);
+}
+
+.icon-grid.compact .icon-wrapper svg {
+    width: 28px;
+    height: 28px;
+}
+
+.icon-grid.compact .icon-label {
+    font-size: var(--font-size-xs);
+}
+
+/* Large variant - hero/feature icons */
+.icon-wrapper.icon-lg {
+    width: 96px;
+    height: 96px;
+    border-radius: var(--border-radius-lg);
+}
+
+.icon-wrapper.icon-lg svg {
+    width: 48px;
+    height: 48px;
+}
+
+.icon-wrapper.icon-lg::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.3) 0%, transparent 40%, rgba(var(--accent-2-rgb), 0.2) 100%);
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.6;
+    transition: var(--transition-default);
+}
+
+.icon-item:hover .icon-wrapper.icon-lg::after {
+    opacity: 1;
+    filter: blur(12px);
+}
+
+/* Cards icon-wrapper adjustments for better visual weight */
+.card .icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--border-radius-md);
+}
+
+.card .icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Lucide data-lucide elements get replaced with SVGs at runtime.
+   Prevent layout shift by sizing the placeholder element. */
+[data-lucide] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+/* ============================================
+   COLORED ICON VARIANTS
+   Vivid gradient background with white icon.
+   Use: <div class="icon-wrapper icon-accent-1">
+   ============================================ */
+.icon-wrapper.icon-accent-1 {
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.85) 0%, rgba(var(--accent-1-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-1-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-1-rgb), 0.3);
+    color: #fff;
+}
+.icon-wrapper.icon-accent-2 {
+    background: linear-gradient(135deg, rgba(var(--accent-2-rgb), 0.85) 0%, rgba(var(--accent-2-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-2-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-2-rgb), 0.3);
+    color: #fff;
+}
+.icon-wrapper.icon-accent-3 {
+    background: linear-gradient(135deg, rgba(var(--accent-3-rgb), 0.85) 0%, rgba(var(--accent-3-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-3-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-3-rgb), 0.3);
+    color: #fff;
+}
+.icon-wrapper.icon-accent-4 {
+    background: linear-gradient(135deg, rgba(var(--accent-4-rgb), 0.85) 0%, rgba(var(--accent-4-rgb), 0.6) 100%);
+    border-color: rgba(var(--accent-4-rgb), 0.5);
+    box-shadow: 0 4px 20px rgba(var(--accent-4-rgb), 0.3);
+    color: #fff;
+}
+
+.icon-item:hover .icon-wrapper.icon-accent-1 {
+    background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.95) 0%, rgba(var(--accent-1-rgb), 0.7) 100%);
+    box-shadow: 0 8px 32px rgba(var(--accent-1-rgb), 0.4), 0 0 16px rgba(var(--accent-1-rgb), 0.2);
+    color: #fff;
+}
+.icon-item:hover .icon-wrapper.icon-accent-2 {
+    background: linear-gradient(135deg, rgba(var(--accent-2-rgb), 0.95) 0%, rgba(var(--accent-2-rgb), 0.7) 100%);
+    box-shadow: 0 8px 32px rgba(var(--accent-2-rgb), 0.4), 0 0 16px rgba(var(--accent-2-rgb), 0.2);
+    color: #fff;
+}
+.icon-item:hover .icon-wrapper.icon-accent-3 {
+    background: linear-gradient(135deg, rgba(var(--accent-3-rgb), 0.95) 0%, rgba(var(--accent-3-rgb), 0.7) 100%);
+    box-shadow: 0 8px 32px rgba(var(--accent-3-rgb), 0.4), 0 0 16px rgba(var(--accent-3-rgb), 0.2);
+    color: #fff;
+}
+.icon-item:hover .icon-wrapper.icon-accent-4 {
+    background: linear-gradient(135deg, rgba(var(--accent-4-rgb), 0.95) 0%, rgba(var(--accent-4-rgb), 0.7) 100%);
+    box-shadow: 0 8px 32px rgba(var(--accent-4-rgb), 0.4), 0 0 16px rgba(var(--accent-4-rgb), 0.2);
+    color: #fff;
+}
+
+/* Responsive adjustments for icon grid */
+@media (max-width: 768px) {
+    .icon-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: var(--element-margin);
+    }
+
+    .icon-wrapper {
+        width: 64px;
+        height: 64px;
+    }
+
+    .icon-wrapper svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .icon-grid.compact .icon-wrapper {
+        width: 48px;
+        height: 48px;
+    }
+
+    .icon-grid.compact .icon-wrapper svg {
+        width: 24px;
+        height: 24px;
+    }
+}

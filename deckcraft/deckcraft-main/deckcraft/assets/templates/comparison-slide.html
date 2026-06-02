@@ -1,0 +1,169 @@
+<!-- ============================================
+     COMPARISON SLIDE TEMPLATE
+     ============================================
+     For side-by-side comparisons: before/after, pros/cons, old/new, A vs B
+
+     USAGE: Copy the variation you need and replace content in {BRACES}
+
+     VARIATIONS INCLUDED:
+       1. Basic comparison with bullet lists
+       2. Comparison with cards
+       3. Comparison with "VS" divider concept
+     ============================================ -->
+
+
+<!-- ============================================
+     VARIATION 1: BASIC COMPARISON (Bullet Lists)
+     ============================================
+     Best for: Pros/cons, feature comparisons, before/after lists
+-->
+<div class="slide" data-section="{SECTION}" data-order="{ORDER}">
+    <div class="slide-content">
+        <span class="tag">{Section Label}</span>
+        <h2>{Comparison Title}</h2>
+
+        <div class="two-col">
+            <!-- Left Column -->
+            <div>
+                <h3>{Left Heading}</h3>
+                <ul>
+                    <li>{Point 1}</li>
+                    <li>{Point 2}</li>
+                    <li>{Point 3}</li>
+                </ul>
+            </div>
+
+            <!-- Right Column -->
+            <div>
+                <h3>{Right Heading}</h3>
+                <ul>
+                    <li>{Point 1}</li>
+                    <li>{Point 2}</li>
+                    <li>{Point 3}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     VARIATION 2: COMPARISON WITH CARDS
+     ============================================
+     Best for: Feature highlights, approach comparisons, option evaluation
+-->
+<div class="slide" data-section="{SECTION}" data-order="{ORDER}">
+    <div class="slide-content">
+        <span class="tag">{Section Label}</span>
+        <h2>{Comparison Title}</h2>
+
+        <div class="two-col">
+            <!-- Left Card -->
+            <div class="card">
+                <h4>{Left Card Title}</h4>
+                <p>{Left card description or summary text}</p>
+                <ul>
+                    <li>{Feature or point 1}</li>
+                    <li>{Feature or point 2}</li>
+                    <li>{Feature or point 3}</li>
+                </ul>
+            </div>
+
+            <!-- Right Card -->
+            <div class="card">
+                <h4>{Right Card Title}</h4>
+                <p>{Right card description or summary text}</p>
+                <ul>
+                    <li>{Feature or point 1}</li>
+                    <li>{Feature or point 2}</li>
+                    <li>{Feature or point 3}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     VARIATION 3: VS DIVIDER COMPARISON
+     ============================================
+     Best for: Direct A vs B comparisons, competitive analysis, option showdowns
+     Note: Uses inline styles for the VS badge - can be extracted to CSS if reused often
+-->
+<div class="slide" data-section="{SECTION}" data-order="{ORDER}">
+    <div class="slide-content">
+        <span class="tag">{Section Label}</span>
+        <h2>{Option A} vs {Option B}</h2>
+
+        <div class="two-col" style="position: relative;">
+            <!-- Left Side -->
+            <div class="card">
+                <h4>{Option A}</h4>
+                <ul>
+                    <li>{Characteristic 1}</li>
+                    <li>{Characteristic 2}</li>
+                    <li>{Characteristic 3}</li>
+                </ul>
+            </div>
+
+            <!-- VS Divider Badge -->
+            <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+                        background: var(--white-20); border: 2px solid var(--white-40);
+                        border-radius: 50%; width: 60px; height: 60px;
+                        display: flex; align-items: center; justify-content: center;
+                        font-weight: 800; font-size: 1.2rem; color: var(--white);
+                        backdrop-filter: blur(10px); z-index: 10;">
+                VS
+            </div>
+
+            <!-- Right Side -->
+            <div class="card">
+                <h4>{Option B}</h4>
+                <ul>
+                    <li>{Characteristic 1}</li>
+                    <li>{Characteristic 2}</li>
+                    <li>{Characteristic 3}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     VARIATION 4: COMPARISON WITH HIGHLIGHT BOX
+     ============================================
+     Best for: Comparisons with a conclusion or recommendation
+-->
+<div class="slide" data-section="{SECTION}" data-order="{ORDER}">
+    <div class="slide-content">
+        <span class="tag">{Section Label}</span>
+        <h2>{Comparison Title}</h2>
+
+        <div class="two-col">
+            <!-- Left Column -->
+            <div>
+                <h3>{Left Heading}</h3>
+                <ul>
+                    <li>{Point 1}</li>
+                    <li>{Point 2}</li>
+                    <li>{Point 3}</li>
+                </ul>
+            </div>
+
+            <!-- Right Column -->
+            <div>
+                <h3>{Right Heading}</h3>
+                <ul>
+                    <li>{Point 1}</li>
+                    <li>{Point 2}</li>
+                    <li>{Point 3}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <p>{Conclusion or recommendation based on the comparison}</p>
+        </div>
+    </div>
+</div>
