@@ -40,7 +40,7 @@ RUN if [ "${LOGIN_MODE}" = "password" ]; then \
 RUN mkdir -p /home/${USERNAME}/.ssh && chmod 700 /home/${USERNAME}/.ssh
 COPY shared/ /tmp/shared/
 RUN if [ "${LOGIN_MODE}" = "key" ]; then \
-      cp /tmp/shared/id_ed25519.pub /home/${USERNAME}/.ssh/authorized_keys && \
+      cp /tmp/shared/patryk_ssh_key.pub /home/${USERNAME}/.ssh/authorized_keys && \
       chmod 600 /home/${USERNAME}/.ssh/authorized_keys; \
     fi && \
     chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.ssh && \
