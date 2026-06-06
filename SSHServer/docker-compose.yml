@@ -1,0 +1,66 @@
+# Unified Ubuntu SSH Server — docker-compose.yml
+#
+# Usage:
+#   All instances:   docker compose up -d
+#   Single instance: docker compose up -d ssh-1
+#   Rebuild:         docker compose up -d --build
+#
+#   Standard name for .env file used, no need to specify --env-file: docker compose up -d
+#   All instances:   docker compose --env-file .env.unified up -d
+
+services:
+  # Instance 1 — key-based auth (mirrors original Ubuntu-SSHServer)
+  ssh-1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USERNAME: ${SSH1_USERNAME}
+        USER_PASS: ${SSH1_USER_PASS}
+        LOGIN_MODE: ${SSH1_LOGIN_MODE}
+    container_name: ${SSH1_CONTAINER_NAME}
+    hostname: ${SSH1_HOSTNAME}
+    ports:
+      - "${SSH1_HOST_PORT}:22"
+    volumes:
+      - ssh1-home:/home/${SSH1_USERNAME}
+    restart: unless-stopped
+
+  # Instance 2 — password auth (mirrors original Ubuntu-SSHServer-2)
+  ssh-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USERNAME: ${SSH2_USERNAME}
+        USER_PASS: ${SSH2_USER_PASS}
+        LOGIN_MODE: ${SSH2_LOGIN_MODE}
+    container_name: ${SSH2_CONTAINER_NAME}
+    hostname: ${SSH2_HOSTNAME}
+    ports:
+      - "${SSH2_HOST_PORT}:22"
+    volumes:
+      - ssh2-home:/home/${SSH2_USERNAME}
+    restart: unless-stopped
+
+  # Instance 3 — password auth, minimal (mirrors original Ubuntu-SSHServer-3)
+  ssh-3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USERNAME: ${SSH3_USERNAME}
+        USER_PASS: ${SSH3_USER_PASS}
+        LOGIN_MODE: ${SSH3_LOGIN_MODE}
+    container_name: ${SSH3_CONTAINER_NAME}
+    hostname: ${SSH3_HOSTNAME}
+    ports:
+      - "${SSH3_HOST_PORT}:22"
+    volumes:
+      - ssh3-home:/home/${SSH3_USERNAME}
+    restart: unless-stopped
+
+volumes:
+  ssh1-home:
+  ssh2-home:
+  ssh3-home:
