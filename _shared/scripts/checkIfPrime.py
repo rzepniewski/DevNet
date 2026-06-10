@@ -8,10 +8,7 @@ def checkIfPrime (numberToCheck):
 
 a=0
 
-for i in range (1, 1000000):
+for i in range (1, 10000):
     if checkIfPrime(i):
         a+=1
         print (a,i)
-
-
-

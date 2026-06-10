@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 
-ARG USERNAME=przepnie
-ARG USER_PASS
+ARG USERNAME=patryk
+ARG USER_PASS=''
 ARG LOGIN_MODE=key
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -40,6 +40,9 @@ RUN if [ "${LOGIN_MODE}" = "password" ]; then \
 RUN mkdir -p /home/${USERNAME}/.ssh && chmod 700 /home/${USERNAME}/.ssh
 COPY shared/ /tmp/shared/
 RUN if [ "${LOGIN_MODE}" = "key" ]; then \
+      if [ ! -f /tmp/shared/patryk_ssh_key.pub ]; then \
+        echo "ERROR: /tmp/shared/patryk_ssh_key.pub not found" >&2; exit 1; \
+      fi; \
       cp /tmp/shared/patryk_ssh_key.pub /home/${USERNAME}/.ssh/authorized_keys && \
       chmod 600 /home/${USERNAME}/.ssh/authorized_keys; \
     fi && \

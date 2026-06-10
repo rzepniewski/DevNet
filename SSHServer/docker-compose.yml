@@ -24,6 +24,7 @@ services:
       - "${SSH1_HOST_PORT}:22"
     volumes:
       - ssh1-home:/home/${SSH1_USERNAME}
+      - /Users/patryk/DevNet/_shared:/home/${SSH1_USERNAME}/shared
     restart: unless-stopped
 
   # Instance 2 — password auth (mirrors original Ubuntu-SSHServer-2)
@@ -41,6 +42,7 @@ services:
       - "${SSH2_HOST_PORT}:22"
     volumes:
       - ssh2-home:/home/${SSH2_USERNAME}
+      - /Users/patryk/DevNet/_shared:/home/${SSH2_USERNAME}/shared
     restart: unless-stopped
 
   # Instance 3 — password auth, minimal (mirrors original Ubuntu-SSHServer-3)
@@ -58,6 +60,7 @@ services:
       - "${SSH3_HOST_PORT}:22"
     volumes:
       - ssh3-home:/home/${SSH3_USERNAME}
+      - /Users/patryk/DevNet/_shared:/home/${SSH3_USERNAME}/shared
     restart: unless-stopped
 
 volumes:
